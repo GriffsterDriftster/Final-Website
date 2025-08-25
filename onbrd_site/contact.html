@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Quote | Onbrd Solutions</title>
+  <meta name="description" content="Get in touch with Onbrd Solutions to book a demo or request a quote for our AI automation services.">
+  <link rel="canonical" href="https://onbrdsolutions.com/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Onbrd Solutions</a>
+      <nav class="main-nav" aria-label="Main menu">
+        <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="blog/index.html">Blog</a></li></ul>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="cta-buttons"><a class="btn btn-primary" href="contact.html">Book a demo</a><a class="btn btn-ghost" href="contact.html#quote">Get a quote now</a></div>
+    </div>
+  </header>
+  <main id="main" style="padding:4rem 0;">
+    <div class="container">
+      <h1 style="font-family:'DM Serif Display', serif; font-size:2rem; margin-bottom:1.5rem;">Let’s work together</h1>
+      <p style="max-width:600px; color:var(--text-sub);">Tell us what success looks like and we’ll show you how our AI agents can deliver it. Use the form below to get in touch; we’ll respond promptly.</p>
+      <form action="https://formspree.io/f/myzdglpq" method="POST" style="margin-top:2rem; max-width:600px;">
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <label>Name<br><input type="text" name="name" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
+          <label>Email<br><input type="email" name="email" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
+          <label>Company<br><input type="text" name="company" style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
+          <label>Website<br><input type="url" name="website" style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
+          <label>What are you hoping to automate?<br><textarea name="message" rows="5" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></textarea></label>
+          <label style="display:flex; align-items:center; gap:0.5rem;"><input type="checkbox" name="consent" required><span>I consent to being contacted regarding this inquiry.</span></label>
+          <button type="submit" class="btn btn-primary" data-analytics="contact-submit">Submit</button>
+        </div>
+      </form>
+      <div id="quote" style="margin-top:4rem;">
+        <h2 style="font-family:'DM Serif Display', serif; font-size:1.8rem;">Get a quote</h2>
+        <p style="max-width:600px; color:var(--text-sub);">Prefer to discuss your project with us directly? Use the booking link below to schedule a call.</p>
+        <a class="btn btn-ghost" href="contact.html">Book a demo</a>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <nav aria-label="Footer menu"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <small>© 2025 Onbrd Solutions. All rights reserved.</small>
+    </div>
+  </footer>
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
