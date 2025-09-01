@@ -14,6 +14,23 @@
   --primary-pressed:#1667D8;
   --primary-soft:#EAF3FF;
   --accent:#27C3A8;
+
+  /*
+    Additional brand palette variables from the updated design spec.  These
+    values unify all new components – plan cards, badges and focus rings – under
+    a consistent palette. They do not override the existing p‑colors but may be
+    referenced by new classes added below.
+  */
+  --mint:#27C3A8;
+  --mint-soft:#E9FBF7;
+  --lav:#8C79F8;
+  --lav-soft:#F3F0FF;
+  /* focus ring colour used for accessibility focus states */
+  --ring:#93C5FD;
+  /* neutral border colour for cards and accents */
+  --border:#E2E8F0;
+  /* soft shadow for card elevations */
+  --shadow:0 10px 30px rgba(30,138,247,0.08);
 }
 html{box-sizing:border-box;scroll-behavior:smooth;}
 *,*::before,*::after{box-sizing:inherit;}
@@ -89,4 +106,117 @@ a:hover{text-decoration:underline;}
   .main-nav.open ul{display:flex;}
   .nav-toggle{display:flex;}
   .cta-buttons{display:none;}
+}
+
+/*
+  ---------------------------------------------------------------------
+  New utility classes and component styles
+  These definitions support the simplified plan grid, FAQ cards and
+  colour accents requested in the site refresh.  They mirror the
+  variables defined at the top of this file and avoid affecting
+  existing components unless explicitly applied via class names.
+*/
+
+/* Unified primary button style.  Applies to both <button> and <a> when
+   given the btn‑primary class.  Uses a 10px radius rather than the
+   pill‑shaped 999px radius defined earlier, making calls to action
+   feel consistent across the site. */
+.button-primary,
+.btn-primary,
+a.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow);
+}
+.button-primary:hover,
+.btn-primary:hover,
+a.btn-primary:hover {
+  background: var(--primary-pressed);
+}
+.button-primary:focus-visible,
+.btn-primary:focus-visible,
+a.btn-primary:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Responsive grid for service tiers.  Cards will wrap nicely on small
+   screens while maintaining minimum widths to prevent crowding. */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+/* Individual plan cards with a soft border and shadow.  The heading uses
+   the serif display typeface already loaded by the site. */
+.plan-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+.plan-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-family: 'DM Serif Display', serif;
+}
+.plan-meta {
+  color: var(--text-sub);
+  font-size: .95rem;
+  margin-bottom: 12px;
+}
+.plan-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0 12px;
+}
+.plan-bullets {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+}
+.plan-bullets li {
+  list-style: none;
+  padding-left: 0;
+}
+.plan-cta {
+  margin-top: 16px;
+}
+
+/* Filled FAQ card styling used to add subtle colour behind answers. */
+.faq-card {
+  background: var(--primary-soft);
+  border: 1px solid #D7E6FF;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Section background alternative.  When applied to a <section>, this
+   adds a very light tone to break up large white sections without
+   overwhelming the design. */
+.section-alt {
+  background: var(--surface-alt);
+}
+
+/* Pill‑style accent badge for highlighting small bits of information. */
+.accent-badge {
+  background: var(--mint-soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-weight: 600;
+  display: inline-block;
 }

@@ -35,7 +35,7 @@
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Skip link removed: keyboard navigation still excellent -->
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Onbrd Solutions</a>
@@ -51,8 +51,8 @@
         </button>
       </nav>
       <div class="cta-buttons">
-        <a class="btn btn-primary" href="contact.html">Book a demo</a>
-        <a class="btn btn-ghost" href="contact.html#quote">Get a quote now</a>
+        <!-- unified call to action: removed Book a demo -->
+        <a class="btn btn-primary" href="contact.html#quote">Get a quote</a>
       </div>
     </div>
   </header>
@@ -63,22 +63,23 @@
         <h1>Access information and deploy your AI team</h1>
         <p class="sub">Agents that answer, schedule, and follow through across chat, phone, and email.</p>
         <div class="cta">
-          <a class="btn btn-primary" href="contact.html">Book a demo</a>
-          <a class="btn btn-ghost" href="contact.html#quote">Get a quote now</a>
+          <!-- unified hero CTA -->
+          <a class="btn btn-primary" href="contact.html#quote">Get a quote</a>
         </div>
       </div>
       <figure class="device-mock">
-        <img src="assets/img/hero.png" alt="Abstract operations blocks over pastel sand background">
+        <img src="assets/img/hero-operations.webp" alt="Abstract AI network illustrating digital operations" width="900" height="600">
       </figure>
     </section>
     <section class="trusted">
       <div class="container">
         <h2>Trusted by forward‑thinking businesses</h2>
         <div class="logos">
-          <img src="assets/img/blog-header.png" alt="Placeholder logo">
-          <img src="assets/img/blog-header.png" alt="Placeholder logo">
-          <img src="assets/img/blog-header.png" alt="Placeholder logo">
-          <img src="assets/img/blog-header.png" alt="Placeholder logo">
+          <!-- unique trust icons representing partnership, growth and collaboration -->
+          <img src="assets/img/trust-handshake.webp" alt="Handshake icon representing partnership" width="120" height="120" loading="lazy" decoding="async">
+          <img src="assets/img/trust-rocket.webp" alt="Rocket icon representing innovation and launch" width="120" height="120" loading="lazy" decoding="async">
+          <img src="assets/img/trust-gears.webp" alt="Gears icon representing collaboration" width="120" height="120" loading="lazy" decoding="async">
+          <img src="assets/img/trust-growth.webp" alt="Growth chart icon representing progress" width="120" height="120" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -123,34 +124,80 @@
       <div class="wrap">
         <h2>See your workflows in action</h2>
         <p>A single control tower to monitor performance and iterate on your AI agents. Connect docs, email, calendars, and CRM to remove silos.</p>
-        <img src="assets/img/hero.png" alt="Workflow snapshot illustration">
+        <img src="assets/img/workflow-dashboard.webp" alt="Dashboard with charts and workflow diagrams" width="800" height="600" loading="lazy" decoding="async">
       </div>
     </section>
-    <section class="tiers">
+    <section class="tiers section-alt">
       <div class="container">
-        <h2>Service tiers</h2>
-        <div class="tier-table">
-          <table aria-label="Service tiers table">
-            <thead>
-              <tr>
-                <th>Features</th>
-                <th>Launch</th>
-                <th>Grow</th>
-                <th>Scale</th>
-                <th>Enterprise</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Number of agents</td><td>1</td><td>2</td><td>3–4</td><td>Custom</td></tr>
-              <tr><td>Channels included</td><td>Up to 2</td><td>Up to 4</td><td>6+ incl. IVR & DMs</td><td>Custom</td></tr>
-              <tr><td>Knowledge bases</td><td>1 (≤50 docs)</td><td>3 with sync</td><td>Governance & redaction</td><td>Custom with residency</td></tr>
-              <tr><td>Workflows</td><td>5</td><td>12</td><td>25+</td><td>Custom</td></tr>
-              <tr><td>Analytics & QA</td><td>Basic dashboard</td><td>Monthly QA review</td><td>Quality evals & retraining</td><td>Custom SLAs & reporting</td></tr>
-              <tr><td>Security & compliance</td><td>Retention & redaction basics</td><td>Guardrails & prompt variants</td><td>SSO/SAML & audit logs</td><td>Private VPC & compliance</td></tr>
-              <tr><td>Pricing</td><td><a href="contact.html#quote">Get a quote now</a></td><td><a href="contact.html#quote">Get a quote now</a></td><td><a href="contact.html#quote">Get a quote now</a></td><td><a href="contact.html#quote">Get a quote now</a></td></tr>
-            </tbody>
-          </table>
+        <h2>Choose your plan. We’ll set it up—no AI degree required.</h2>
+        <!-- simplified service tiers presented as a responsive grid -->
+        <div class="plan-grid">
+          <!-- Launch Plan -->
+          <div class="plan-card">
+            <h3>Launch</h3>
+            <p class="plan-meta">Start with one AI teammate that answers and books.</p>
+            <ul class="plan-bullets">
+              <li><strong>AI teammates included:</strong> 1 (Chat Bot, Phone Bot, Review Bot, Secretary Agent, Content Agent)</li>
+              <li><strong>Works on:</strong> Web chat, Phone*, Email, SMS, Social DMs</li>
+              <li><strong>Learns from:</strong> Website, PDFs, Google Drive, Notion, CRM, Help Center</li>
+              <li><strong>Automations:</strong> Up to ~5 (book meetings, capture leads, route calls)</li>
+              <li><strong>Tuning & insights:</strong> Basic dashboard</li>
+              <li><strong>Onboarding & support:</strong> We set it up • Email (48h)</li>
+              <li><strong>Go live in:</strong> ~7 days</li>
+              <li><strong>Risk:</strong> Cancel anytime</li>
+            </ul>
+            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+          </div>
+          <!-- Grow Plan -->
+          <div class="plan-card">
+            <h3>Grow</h3>
+            <p class="plan-meta">Two AI teammates across more channels—plus monthly tuning.</p>
+            <ul class="plan-bullets">
+              <li><strong>AI teammates included:</strong> 2</li>
+              <li><strong>Works on:</strong> Web chat, Phone*, Email, SMS, Social DMs</li>
+              <li><strong>Learns from:</strong> Website, PDFs, Google Drive, Notion, CRM, Help Center (auto‑sync)</li>
+              <li><strong>Automations:</strong> Up to ~12 (CRM updates, follow‑ups)</li>
+              <li><strong>Tuning & insights:</strong> Monthly tune‑up</li>
+              <li><strong>Onboarding & support:</strong> We set it up • Priority support (24h)</li>
+              <li><strong>Go live in:</strong> ~10–14 days</li>
+              <li><strong>Risk:</strong> Cancel anytime</li>
+            </ul>
+            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+          </div>
+          <!-- Scale Plan -->
+          <div class="plan-card">
+            <h3>Scale</h3>
+            <p class="plan-meta">A small team of AI agents with approvals, routing and QA.</p>
+            <ul class="plan-bullets">
+              <li><strong>AI teammates included:</strong> 3–4</li>
+              <li><strong>Works on:</strong> Web chat, Phone*, Email, SMS, Social DMs</li>
+              <li><strong>Learns from:</strong> Website, PDFs, Google Drive, Notion, CRM, Help Center (redaction)</li>
+              <li><strong>Automations:</strong> ~25+ with approvals & routing</li>
+              <li><strong>Tuning & insights:</strong> Quality reviews & retraining</li>
+              <li><strong>Onboarding & support:</strong> We set it up • Priority support (24h) • Playbooks</li>
+              <li><strong>Go live in:</strong> ~2–4 weeks</li>
+              <li><strong>Risk:</strong> Cancel anytime</li>
+            </ul>
+            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+          </div>
+          <!-- Enterprise Plan -->
+          <div class="plan-card">
+            <h3>Enterprise</h3>
+            <p class="plan-meta">Custom, with data residency and advanced controls.</p>
+            <ul class="plan-bullets">
+              <li><strong>AI teammates included:</strong> Custom</li>
+              <li><strong>Works on:</strong> Custom channels</li>
+              <li><strong>Learns from:</strong> Custom sources</li>
+              <li><strong>Automations:</strong> Custom</li>
+              <li><strong>Tuning & insights:</strong> Custom SLAs & reporting</li>
+              <li><strong>Onboarding & support:</strong> Custom</li>
+              <li><strong>Go live in:</strong> Consult</li>
+              <li><strong>Risk:</strong> Cancel anytime</li>
+            </ul>
+            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+          </div>
         </div>
+        <p style="font-size:0.9rem; color:var(--text-sub); margin-top:1rem;">All plans include: human‑approved brand voice, lead capture, calendar booking, and dashboards. Cancel anytime. Need a quick fit‑check? Book a 15‑minute call.</p>
       </div>
     </section>
     <section class="faq">
@@ -159,7 +206,8 @@
         <details class="faq-item"><summary>What is an AI agent?</summary><div>Our AI agents are pre‑built automations that combine language models, workflows, and integrations to perform tasks like answering questions, booking meetings, processing invoices, and following up with leads.</div></details>
         <details class="faq-item"><summary>How long does it take to get started?</summary><div>We typically deploy your first agent within two to four weeks, depending on the complexity of your workflows and integrations. A paid pilot is available to prove value quickly.</div></details>
         <details class="faq-item"><summary>Do I need technical expertise?</summary><div>No coding is required. Our team handles configuration and maintenance, and you can iterate on prompts and workflows without retraining.</div></details>
-        <details class="faq-item"><summary>Can I try before committing?</summary><div>Yes – we offer a paid pilot that lets you experience the impact of AI agents with clear success criteria before moving into a full deployment.</div></details>
+        <!-- Updated FAQ: provide a professional answer that clarifies there is no trial, but cancellations are easy and demos are available -->
+        <details class="faq-item"><summary>Can I try before committing?</summary><div>No, but you can cancel anytime. We’re happy to show you how the system works and give you a live demonstration.</div></details>
       </div>
     </section>
   </main>
