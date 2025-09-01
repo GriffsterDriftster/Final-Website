@@ -33,9 +33,146 @@
     }
   }
   </script>
+  <style>
+    /* -----------------------------
+       Glassmorphism Plans Redesign
+       ----------------------------- */
+    :root{
+      --bg:#F9FBFF; --surface:#FFFFFF; --surface-alt:#F2F6FF;
+      --text:#0F172A; --text-sub:#475569;
+      --primary:#1E8AF7; --primary-pressed:#1667D8; --primary-soft:#EAF3FF;
+      --mint:#27C3A8; --mint-soft:#E9FBF7;
+      --lav:#8C79F8;
+    }
+
+    .tiers { 
+      padding: clamp(5rem, 8vw, 9rem) 0; 
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(60% 60% at 50% 0%, rgba(30,138,247,.14) 0%, rgba(30,138,247,0) 60%),
+        linear-gradient(180deg, var(--surface-alt) 0%, #ffffff 65%);
+    }
+    .tiers::after { /* subtle top highlight */
+      content:""; position:absolute; inset:0; pointer-events:none;
+      background: linear-gradient(180deg, rgba(255,255,255,.35) 0%, rgba(255,255,255,0) 25%);
+    }
+
+    .tiers .container { max-width: min(1400px, 95vw); margin: 0 auto; padding-inline: clamp(1rem, 3vw, 2rem); }
+    .tiers .container > h2 { margin-bottom: clamp(1.5rem, 3vw, 3rem); line-height: 1.15; letter-spacing: -0.01em; }
+
+    .plan-grid { 
+      display: grid; 
+      grid-template-columns: 1fr; /* one plan per row */
+      gap: clamp(1.75rem, 3vw, 3rem); 
+      align-items: stretch; 
+      margin-top: clamp(.5rem, 2vw, 1.5rem);
+    }
+    
+    
+
+    .plan-card { 
+      position: relative; 
+      border-radius: 22px; 
+      padding: clamp(1.25rem, 2.2vw, 2rem); 
+      display: flex; flex-direction: column; gap: .875rem; min-height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
+      border: 1px solid rgba(255,255,255,.45);
+      box-shadow: 0 10px 40px rgba(2,6,23,.12), inset 0 1px 0 rgba(255,255,255,.35);
+      backdrop-filter: blur(16px) saturate(130%);
+      -webkit-backdrop-filter: blur(16px) saturate(130%);
+      isolation: isolate;
+    }
+    .plan-card::before { /* soft color accents */
+      content:""; position:absolute; inset:0; border-radius:22px; z-index:0; pointer-events:none;
+      background: 
+        radial-gradient(120% 80% at -10% -10%, rgba(140,121,248,.18), rgba(140,121,248,0) 35%),
+        radial-gradient(100% 60% at 110% 10%, rgba(30,138,247,.18), rgba(30,138,247,0) 40%);
+    }
+    .plan-card > * { position: relative; z-index: 1; }
+
+    .plan-card h3 { margin: 0 0 .45rem; font-size: clamp(1.1rem, 1.3vw, 1.3rem); }
+    .plan-meta { color: var(--text-sub); line-height: 1.65; }
+
+    .plan-bullets { margin: .75rem 0 1.25rem 1.25rem; display: grid; gap: .75rem; }
+    .plan-bullets li { line-height: 1.65; }
+
+    .plan-cta { margin-top: auto; padding-top: .25rem; }
+
+    /* Let the section's gradient show (no solid alt bg here) */
+    .section-alt { background: transparent; }
+
+    /* Optional: bump the rest of the page spacing to match the premium feel */
+    .tiers .container > p:last-of-type { margin-top: clamp(1.25rem, 2.2vw, 1.75rem); color: var(--text-sub); }
+
+    /* Basic button fallback */
+    .btn.btn-primary { display:inline-block; padding:.75rem 1.1rem; border-radius:.75rem; text-decoration:none; background:var(--primary); color:#fff; font-weight:600; }
+    /* Horizontal card layout (desktop) */
+    @media (min-width: 900px) {
+      .plan-card {
+        display: grid;
+        grid-template-columns: minmax(300px, 360px) 1fr; /* left meta column + right features */
+        column-gap: clamp(1.5rem, 3vw, 2.5rem);
+        row-gap: .75rem;
+        align-items: start;
+        padding: clamp(1.5rem, 2.2vw, 2.25rem);
+      }
+      .plan-card h3,
+      .plan-card .plan-meta,
+      .plan-card .plan-cta { grid-column: 1; }
+      .plan-card .plan-bullets { grid-column: 2; margin: 0; }
+      .plan-card .plan-cta { align-self: end; justify-self: start; }
+    }
+
+    /* Stripe layout for plans */
+    .plan-rows{ display:flex; flex-direction:column; gap:clamp(1.25rem,2.5vw,2rem); }
+
+    .plan-row{
+      position:relative; isolation:isolate;
+      display:grid; grid-template-columns: minmax(280px, 360px) 1fr; align-items:start;
+      gap: clamp(1rem, 2.5vw, 2rem);
+      padding: clamp(1.25rem, 2.2vw, 2rem);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.38));
+      border: 1px solid rgba(255,255,255,.5);
+      box-shadow: 0 10px 40px rgba(2,6,23,.10), inset 0 1px 0 rgba(255,255,255,.35);
+      backdrop-filter: blur(16px) saturate(130%);
+      -webkit-backdrop-filter: blur(16px) saturate(130%);
+    }
+    .plan-row::before{ content:""; position:absolute; inset:0; border-radius:22px; pointer-events:none; z-index:0;
+      background:
+        radial-gradient(120% 80% at -10% -10%, rgba(140,121,248,.18), rgba(140,121,248,0) 35%),
+        radial-gradient(100% 60% at 110% 10%, rgba(30,138,247,.18), rgba(30,138,247,0) 40%);
+    }
+    .plan-info, .plan-list{ position:relative; z-index:1; }
+
+    .plan-info h3{ margin:0 0 .4rem; font-size: clamp(1.1rem, 1.3vw, 1.3rem); }
+    .plan-meta{ color:var(--text-sub); line-height:1.65; margin-bottom:.5rem; }
+    .plan-cta{ margin-top:auto; }
+
+    /* Feature list in two columns on wide screens */
+    .plan-list{ list-style:none; margin:0; padding-left:1.1rem; display:grid; gap:.65rem 1.25rem; }
+    .plan-list li{ position:relative; line-height:1.65; }
+    .plan-list li::marker{ content:"• "; }
+    @media (min-width: 1000px){
+      .plan-list{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+    }
+
+    /* Accent border per plan */
+    .plan-row{ border-left:6px solid transparent; }
+    .plan-row[data-accent="launch"]{ border-left-color: rgba(30,138,247,.5); }
+    .plan-row[data-accent="grow"]{ border-left-color: rgba(39,195,168,.55); }
+    .plan-row[data-accent="scale"]{ border-left-color: rgba(140,121,248,.55); }
+    .plan-row[data-accent="enterprise"]{ border-left-color: rgba(15,23,42,.35); }
+
+    /* Stack neatly on small screens */
+    @media (max-width: 899px){
+      .plan-row{ grid-template-columns: 1fr; }
+    }
+
+  </style>
 </head>
 <body>
-  <!-- Skip link removed: keyboard navigation still excellent -->
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Onbrd Solutions</a>
@@ -51,7 +188,6 @@
         </button>
       </nav>
       <div class="cta-buttons">
-        <!-- unified call to action: removed Book a demo -->
         <a class="btn btn-primary" href="contact.html#quote">Get a quote</a>
       </div>
     </div>
@@ -63,7 +199,6 @@
         <h1>Access information and deploy your AI team</h1>
         <p class="sub">Agents that answer, schedule, and follow through across chat, phone, and email.</p>
         <div class="cta">
-          <!-- unified hero CTA -->
           <a class="btn btn-primary" href="contact.html#quote">Get a quote</a>
         </div>
       </div>
@@ -75,7 +210,6 @@
       <div class="container">
         <h2>Trusted by forward‑thinking businesses</h2>
         <div class="logos">
-          <!-- unique trust icons representing partnership, growth and collaboration -->
           <img src="assets/img/trust-handshake.webp" alt="Handshake icon representing partnership" width="120" height="120" loading="lazy" decoding="async">
           <img src="assets/img/trust-rocket.webp" alt="Rocket icon representing innovation and launch" width="120" height="120" loading="lazy" decoding="async">
           <img src="assets/img/trust-gears.webp" alt="Gears icon representing collaboration" width="120" height="120" loading="lazy" decoding="async">
@@ -127,16 +261,21 @@
         <img src="assets/img/workflow-dashboard.webp" alt="Dashboard with charts and workflow diagrams" width="800" height="600" loading="lazy" decoding="async">
       </div>
     </section>
-    <section class="tiers section-alt">
+
+    <!-- Plans — Stripe Glass Layout -->
+    <section class="tiers section-alt" id="plans">
       <div class="container">
         <h2>Choose your plan. We’ll set it up—no AI degree required.</h2>
-        <!-- simplified service tiers presented as a responsive grid -->
-        <div class="plan-grid">
-          <!-- Launch Plan -->
-          <div class="plan-card">
-            <h3>Launch</h3>
-            <p class="plan-meta">Start with one AI teammate that answers and books.</p>
-            <ul class="plan-bullets">
+
+        <div class="plan-rows">
+          <!-- Launch -->
+          <article class="plan-row" data-accent="launch">
+            <div class="plan-info">
+              <h3>Launch</h3>
+              <p class="plan-meta">Start with one AI teammate that answers and books.</p>
+              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            </div>
+            <ul class="plan-list">
               <li><strong>AI teammates included:</strong> 1 (Chat Bot, Phone Bot, Review Bot, Secretary Agent, Content Agent)</li>
               <li><strong>Works on:</strong> Web chat, Phone*, Email, SMS, Social DMs</li>
               <li><strong>Learns from:</strong> Website, PDFs, Google Drive, Notion, CRM, Help Center</li>
@@ -146,13 +285,16 @@
               <li><strong>Go live in:</strong> ~7 days</li>
               <li><strong>Risk:</strong> Cancel anytime</li>
             </ul>
-            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-          </div>
-          <!-- Grow Plan -->
-          <div class="plan-card">
-            <h3>Grow</h3>
-            <p class="plan-meta">Two AI teammates across more channels—plus monthly tuning.</p>
-            <ul class="plan-bullets">
+          </article>
+
+          <!-- Grow -->
+          <article class="plan-row" data-accent="grow">
+            <div class="plan-info">
+              <h3>Grow</h3>
+              <p class="plan-meta">Two AI teammates across more channels—plus monthly tuning.</p>
+              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            </div>
+            <ul class="plan-list">
               <li><strong>AI teammates included:</strong> 2</li>
               <li><strong>Works on:</strong> Web chat, Phone*, Email, SMS, Social DMs</li>
               <li><strong>Learns from:</strong> Website, PDFs, Google Drive, Notion, CRM, Help Center (auto‑sync)</li>
@@ -162,13 +304,16 @@
               <li><strong>Go live in:</strong> ~10–14 days</li>
               <li><strong>Risk:</strong> Cancel anytime</li>
             </ul>
-            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-          </div>
-          <!-- Scale Plan -->
-          <div class="plan-card">
-            <h3>Scale</h3>
-            <p class="plan-meta">A small team of AI agents with approvals, routing and QA.</p>
-            <ul class="plan-bullets">
+          </article>
+
+          <!-- Scale -->
+          <article class="plan-row" data-accent="scale">
+            <div class="plan-info">
+              <h3>Scale</h3>
+              <p class="plan-meta">A small team of AI agents with approvals, routing and QA.</p>
+              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            </div>
+            <ul class="plan-list">
               <li><strong>AI teammates included:</strong> 3–4</li>
               <li><strong>Works on:</strong> Web chat, Phone*, Email, SMS, Social DMs</li>
               <li><strong>Learns from:</strong> Website, PDFs, Google Drive, Notion, CRM, Help Center (redaction)</li>
@@ -178,13 +323,16 @@
               <li><strong>Go live in:</strong> ~2–4 weeks</li>
               <li><strong>Risk:</strong> Cancel anytime</li>
             </ul>
-            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-          </div>
-          <!-- Enterprise Plan -->
-          <div class="plan-card">
-            <h3>Enterprise</h3>
-            <p class="plan-meta">Custom, with data residency and advanced controls.</p>
-            <ul class="plan-bullets">
+          </article>
+
+          <!-- Enterprise -->
+          <article class="plan-row" data-accent="enterprise">
+            <div class="plan-info">
+              <h3>Enterprise</h3>
+              <p class="plan-meta">Custom, with data residency and advanced controls.</p>
+              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            </div>
+            <ul class="plan-list">
               <li><strong>AI teammates included:</strong> Custom</li>
               <li><strong>Works on:</strong> Custom channels</li>
               <li><strong>Learns from:</strong> Custom sources</li>
@@ -194,19 +342,19 @@
               <li><strong>Go live in:</strong> Consult</li>
               <li><strong>Risk:</strong> Cancel anytime</li>
             </ul>
-            <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-          </div>
+          </article>
         </div>
-        <p style="font-size:0.9rem; color:var(--text-sub); margin-top:1rem;">All plans include: human‑approved brand voice, lead capture, calendar booking, and dashboards. Cancel anytime. Need a quick fit‑check? Book a 15‑minute call.</p>
+
+        <p class="footnote">All plans include: human‑approved brand voice, lead capture, calendar booking, and dashboards. Cancel anytime. Need a quick fit‑check? Book a 15‑minute call.</p>
       </div>
     </section>
+
     <section class="faq">
       <div class="container">
         <h2>Frequently asked questions</h2>
         <details class="faq-item"><summary>What is an AI agent?</summary><div>Our AI agents are pre‑built automations that combine language models, workflows, and integrations to perform tasks like answering questions, booking meetings, processing invoices, and following up with leads.</div></details>
         <details class="faq-item"><summary>How long does it take to get started?</summary><div>We typically deploy your first agent within two to four weeks, depending on the complexity of your workflows and integrations. A paid pilot is available to prove value quickly.</div></details>
         <details class="faq-item"><summary>Do I need technical expertise?</summary><div>No coding is required. Our team handles configuration and maintenance, and you can iterate on prompts and workflows without retraining.</div></details>
-        <!-- Updated FAQ: provide a professional answer that clarifies there is no trial, but cancellations are easy and demos are available -->
         <details class="faq-item"><summary>Can I try before committing?</summary><div>No, but you can cancel anytime. We’re happy to show you how the system works and give you a live demonstration.</div></details>
       </div>
     </section>
