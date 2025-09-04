@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Services | Onbrd Solutions</title>
-  <meta name="description" content="Explore our AI agents – Chat Bot, Phone Bot, Review Bot, Invoice Agent, Appointment Maker, and Lead Follow‑up Agent." />
+  <meta name="description" content="Explore simple, helpful AI agents—Chat Bot, Phone Bot, Review Bot, Invoice Agent, Appointment Maker, and Lead Follow‑up Agent." />
   <link rel="canonical" href="https://onbrdsolutions.com/services.html" />
   <meta name="theme-color" content="#F3EEDC" />
 
@@ -16,9 +16,8 @@
 
   <!-- Page-scoped aesthetic upgrades -->
   <style>
-    :root{
-      --edge: rgba(15,23,42,.06);
-    }
+    :root{ --edge: rgba(15,23,42,.06); }
+
     /* Page hero */
     .page-hero{background:radial-gradient(1200px 60% at 0% 0%, var(--p-sand) 0%, #fff 70%); padding:7rem 0 3rem; position:relative; overflow:hidden}
     .page-hero::after{content:""; position:absolute; inset:-10% -20% auto -20%; height:20rem; background:linear-gradient(90deg,var(--p-peach),var(--p-lav),var(--p-mint)); filter:blur(60px); opacity:.25; pointer-events:none}
@@ -34,7 +33,7 @@
 
     /* Agent sections */
     .agents{padding:3rem 0 5rem}
-    .agent-section{max-width:1100px; margin:1.25rem auto; padding:1.75rem; border:1px solid var(--edge); background:var(--surface); border-radius:1.25rem; box-shadow:0 10px 40px rgba(15,23,42,.06)}
+    .agent-section{max-width:1100px; margin:1.25rem auto; padding:1.75rem; border:1px solid var(--edge); background:var(--surface); border-radius:1.25rem; box-shadow:0 10px 40px rgba(15,23,42,.06); scroll-margin-top:96px}
     .agent-header{display:flex; align-items:center; gap:1rem; margin-bottom:.75rem}
     .agent-badge{height:36px; width:36px; border-radius:10px; background:var(--p-blue); box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
     .agent-section.is-mint .agent-badge{background:var(--p-mint)}
@@ -72,8 +71,6 @@
   </style>
 </head>
 <body>
-  <!-- skip link removed -->
-
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Onbrd Solutions</a>
@@ -87,8 +84,7 @@
         <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
       </nav>
       <div class="cta-buttons">
-        <!-- unified call to action -->
-        <a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote">Get a quote</a>
+        <a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote-header">Get a quote</a>
       </div>
     </div>
   </header>
@@ -97,7 +93,7 @@
     <section class="page-hero" aria-label="Services overview">
       <div class="container">
         <h1>Our AI agents</h1>
-        <p class="lead">A calm, capable lineup that answers, schedules, follows up, and reconciles—so your team can focus on work that matters.</p>
+        <p class="lead">We answer, schedule, follow up, and reconcile—so your team can focus on the work that matters.</p>
       </div>
     </section>
 
@@ -113,7 +109,7 @@
     </div>
 
     <section class="agents section-alt">
-      <h2 class="sr-only">Detailed Agent Descriptions</h2>
+      <h2 class="sr-only">Detailed agent descriptions</h2>
 
       <!-- Chat Bot -->
       <article id="chatbot" class="agent-section is-blue" aria-labelledby="h-chatbot">
@@ -121,16 +117,16 @@
           <div class="agent-badge" aria-hidden="true"></div>
           <h3 id="h-chatbot">AI Chat Bot</h3>
         </header>
-        <p class="lead">Answers common questions, captures leads, and hands off complex cases to humans—24/7 and on‑brand.</p>
+        <p class="lead">Answers common questions, captures leads, and hands off complex chats—24/7 and on‑brand.</p>
         <div class="agent-layout">
           <div>
             <h4>Key capabilities</h4>
             <ul>
-              <li>Retrieval‑augmented answers over your documents</li>
-              <li>Lead capture into your CRM</li>
-              <li>Order and booking lookups</li>
-              <li>Safe escalation with sentiment & policy checks</li>
-              <li>Analytics dashboard: resolution & deflection</li>
+              <li>Answers questions using your website and files.</li>
+              <li>Collects name, email, and phone so you can follow up.</li>
+              <li>Looks up orders or bookings when connected.</li>
+              <li>Sends tricky chats to a human on your team.</li>
+              <li>Works day and night without breaks.</li>
             </ul>
             <h4>Integrations</h4>
             <ul>
@@ -138,28 +134,28 @@
               <li>Zendesk, HubSpot, Pipedrive</li>
               <li>Google Drive, Notion, Confluence</li>
             </ul>
-            <h4>KPIs</h4>
+            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
             <ul>
-              <li>Resolution rate</li>
-              <li>Deflection %</li>
-              <li>CSAT</li>
-              <li>Leads captured</li>
+              <li>Questions solved without a human.</li>
+              <li>People who left their contact details.</li>
+              <li>Customer satisfaction rating (thumbs‑up %).</li>
+              <li>Times the chat needed a human.</li>
             </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Chat Bot">
             <h4>Estimated savings</h4>
             <div class="table-responsive">
               <table>
-                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>AHT</th><th>Automation</th><th>Hours</th><th>Est. $*</th></tr></thead>
+                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>Hours</th><th>Est. $*</th></tr></thead>
                 <tbody>
-                  <tr><td>Low</td><td>300 chats</td><td>4 min</td><td>40%</td><td>8 h</td><td>$280</td></tr>
-                  <tr><td>Mid</td><td>1,000 chats</td><td>4 min</td><td>60%</td><td>40 h</td><td>$1,400</td></tr>
-                  <tr><td>High</td><td>3,000 chats</td><td>4 min</td><td>70%</td><td>140 h</td><td>$4,900*</td></tr>
+                  <tr><td>Low</td><td>300 chats</td><td>8 h</td><td>$280</td></tr>
+                  <tr><td>Mid</td><td>1,000 chats</td><td>40 h</td><td>$1,400</td></tr>
+                  <tr><td>High</td><td>3,000 chats</td><td>140 h</td><td>$4,900*</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="footnote">*Illustrative only; actual impact varies.</p>
-            <div class="cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            <p class="footnote">*Estimates assume $35/hr. Actual impact varies by team and industry.</p>
+            <div class="cta"><a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote-chatbot">Get a quote</a></div>
           </aside>
         </div>
       </article>
@@ -172,10 +168,11 @@
           <div>
             <h4>Key capabilities</h4>
             <ul>
-              <li>Natural language IVR, caller intent, live transfer</li>
-              <li>Compliance prompts and recordings</li>
-              <li>Booking and status updates</li>
-              <li>Call analytics and reporting</li>
+              <li>Picks up calls and understands what people want.</li>
+              <li>Sends callers to the right person or takes a message.</li>
+              <li>Books appointments or gives order/status updates.</li>
+              <li>Can greet callers and record calls if you choose.</li>
+              <li>Sends you short call summaries.</li>
             </ul>
             <h4>Integrations</h4>
             <ul>
@@ -183,27 +180,28 @@
               <li>Calendly, Google & Microsoft calendars</li>
               <li>CRM systems</li>
             </ul>
-            <h4>KPIs</h4>
+            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
             <ul>
-              <li>First‑call resolution</li>
-              <li>After‑hours capture</li>
-              <li>Hold time reduction</li>
+              <li>Calls handled without a human.</li>
+              <li>After‑hours calls saved.</li>
+              <li>Average wait time cut.</li>
+              <li>Appointments booked by phone.</li>
             </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Phone Bot">
             <h4>Estimated savings</h4>
             <div class="table-responsive">
               <table>
-                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>AHT</th><th>Automation</th><th>Hours</th><th>Est. $*</th></tr></thead>
+                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>Hours</th><th>Est. $*</th></tr></thead>
                 <tbody>
-                  <tr><td>Low</td><td>400 calls</td><td>3 min</td><td>50%</td><td>10 h</td><td>$350</td></tr>
-                  <tr><td>Mid</td><td>1,200 calls</td><td>3 min</td><td>50%</td><td>30 h</td><td>$1,050</td></tr>
-                  <tr><td>High</td><td>3,000 calls</td><td>3 min</td><td>50%</td><td>75 h</td><td>$2,625*</td></tr>
+                  <tr><td>Low</td><td>400 calls</td><td>10 h</td><td>$350</td></tr>
+                  <tr><td>Mid</td><td>1,200 calls</td><td>30 h</td><td>$1,050</td></tr>
+                  <tr><td>High</td><td>3,000 calls</td><td>75 h</td><td>$2,625*</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="footnote">*Illustrative only; announce recording/AI use where required.</p>
-            <div class="cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            <p class="footnote">*Estimates assume $35/hr. Announce recording/AI use where required.</p>
+            <div class="cta"><a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote-phone">Get a quote</a></div>
           </aside>
         </div>
       </article>
@@ -211,15 +209,16 @@
       <!-- Review Bot -->
       <article id="reviewbot" class="agent-section is-lav" aria-labelledby="h-reviewbot">
         <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-reviewbot">AI Review Bot</h3></header>
-        <p class="lead">Monitors Google/Yelp/Facebook/Trustpilot, drafts on‑brand replies, and escalates sensitive cases.</p>
+        <p class="lead">Monitors Google, Yelp, Facebook, and Trustpilot; drafts on‑brand replies; flags sensitive cases.</p>
         <div class="agent-layout">
           <div>
             <h4>Key capabilities</h4>
             <ul>
-              <li>Fetch & classify reviews, sentiment</li>
-              <li>On‑brand response drafts</li>
-              <li>Escalation workflows</li>
-              <li>Weekly insights</li>
+              <li>Finds new reviews across major sites.</li>
+              <li>Groups them as happy, neutral, or unhappy.</li>
+              <li>Writes reply drafts you can approve or edit.</li>
+              <li>Flags sensitive reviews for a human to handle.</li>
+              <li>Sends a weekly summary with the highlights.</li>
             </ul>
             <h4>Integrations</h4>
             <ul>
@@ -227,21 +226,28 @@
               <li>Google Business Profiles, Yelp, Facebook Pages</li>
               <li>Slack notifications</li>
             </ul>
+            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
+            <ul>
+              <li>Reviews replied to.</li>
+              <li>Average response time.</li>
+              <li>% of replies approved as‑is.</li>
+              <li>Issues escalated to a human.</li>
+            </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Review Bot">
             <h4>Estimated savings</h4>
             <div class="table-responsive">
               <table>
-                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>AHT</th><th>Automation</th><th>Hours</th><th>Est. $*</th></tr></thead>
+                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>Hours</th><th>Est. $*</th></tr></thead>
                 <tbody>
-                  <tr><td>Low</td><td>80 reviews</td><td>5 min</td><td>90%</td><td>6 h</td><td>$210</td></tr>
-                  <tr><td>Mid</td><td>200 reviews</td><td>5 min</td><td>85%</td><td>14.2 h</td><td>$495</td></tr>
-                  <tr><td>High</td><td>500 reviews</td><td>5 min</td><td>80%</td><td>33.3 h</td><td>$1,165*</td></tr>
+                  <tr><td>Low</td><td>80 reviews</td><td>6 h</td><td>$210</td></tr>
+                  <tr><td>Mid</td><td>200 reviews</td><td>14.2 h</td><td>$495</td></tr>
+                  <tr><td>High</td><td>500 reviews</td><td>33.3 h</td><td>$1,165*</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="footnote">*Illustrative only; actual impact varies.</p>
-            <div class="cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            <p class="footnote">*Estimates assume $35/hr. Actual impact varies.</p>
+            <div class="cta"><a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote-review">Get a quote</a></div>
           </aside>
         </div>
       </article>
@@ -249,15 +255,16 @@
       <!-- Invoice Agent -->
       <article id="invoiceagent" class="agent-section is-peach" aria-labelledby="h-invoice">
         <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-invoice">AI Invoice Agent</h3></header>
-        <p class="lead">Extracts invoice data from email/PDF, checks totals, matches POs, posts to accounting, and schedules reminders.</p>
+        <p class="lead">Reads invoices from email/PDF, checks totals, matches POs, posts to accounting, and sends reminders.</p>
         <div class="agent-layout">
           <div>
             <h4>Key capabilities</h4>
             <ul>
-              <li>OCR + field validation</li>
-              <li>Duplicate detection & 3‑way match</li>
-              <li>Approver routing</li>
-              <li>Payment reminders</li>
+              <li>Reads invoices from email or PDFs.</li>
+              <li>Fills in the important fields for you.</li>
+              <li>Checks for duplicates and matches POs.</li>
+              <li>Sends to the right person to approve.</li>
+              <li>Reminds you when something is due.</li>
             </ul>
             <h4>Integrations</h4>
             <ul>
@@ -265,21 +272,28 @@
               <li>QuickBooks/Xero/SAP (or via Zapier/n8n)</li>
               <li>Slack notifications</li>
             </ul>
+            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
+            <ul>
+              <li>Invoices processed each week.</li>
+              <li>Errors caught before payment.</li>
+              <li>Average approval time.</li>
+              <li>On‑time payments.</li>
+            </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Invoice Agent">
             <h4>Estimated savings</h4>
             <div class="table-responsive">
               <table>
-                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>AHT</th><th>Automation</th><th>Hours</th><th>Est. $*</th></tr></thead>
+                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>Hours</th><th>Est. $*</th></tr></thead>
                 <tbody>
-                  <tr><td>Low</td><td>200 invoices</td><td>5 min</td><td>70%</td><td>11.7 h</td><td>$410</td></tr>
-                  <tr><td>Mid</td><td>500 invoices</td><td>5 min</td><td>70%</td><td>29.2 h</td><td>$1,020</td></tr>
-                  <tr><td>High</td><td>1,000 invoices</td><td>5 min</td><td>70%</td><td>58.3 h</td><td>$2,040*</td></tr>
+                  <tr><td>Low</td><td>200 invoices</td><td>11.7 h</td><td>$410</td></tr>
+                  <tr><td>Mid</td><td>500 invoices</td><td>29.2 h</td><td>$1,020</td></tr>
+                  <tr><td>High</td><td>1,000 invoices</td><td>58.3 h</td><td>$2,040*</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="footnote">*Illustrative only; actual impact varies.</p>
-            <div class="cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            <p class="footnote">*Estimates assume $35/hr. Actual impact varies.</p>
+            <div class="cta"><a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote-invoice">Get a quote</a></div>
           </aside>
         </div>
       </article>
@@ -292,10 +306,11 @@
           <div>
             <h4>Key capabilities</h4>
             <ul>
-              <li>Slot finding across calendars</li>
-              <li>Smart reminders & prep instructions</li>
-              <li>Two‑way confirmations</li>
-              <li>Policy awareness</li>
+              <li>Finds open times on your calendars.</li>
+              <li>Offers times to customers by chat, SMS, or phone.</li>
+              <li>Sends reminders and prep instructions.</li>
+              <li>Handles reschedules and cancellations.</li>
+              <li>Updates your calendar automatically.</li>
             </ul>
             <h4>Integrations</h4>
             <ul>
@@ -303,21 +318,28 @@
               <li>SMS/WhatsApp</li>
               <li>CRM</li>
             </ul>
+            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
+            <ul>
+              <li>Appointments booked.</li>
+              <li>No‑show rate reduced.</li>
+              <li>Time to confirm an appointment.</li>
+              <li>Cancellations recovered (rebooked).</li>
+            </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Appointment Maker">
             <h4>Estimated savings</h4>
             <div class="table-responsive">
               <table>
-                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>AHT</th><th>Automation</th><th>Hours</th><th>Est. $*</th></tr></thead>
+                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>Hours</th><th>Est. $*</th></tr></thead>
                 <tbody>
-                  <tr><td>Low</td><td>400 appts</td><td>5 min</td><td>80%</td><td>26.7 h</td><td>$935</td></tr>
-                  <tr><td>Mid</td><td>1,000 appts</td><td>5 min</td><td>80%</td><td>66.7 h</td><td>$2,335</td></tr>
-                  <tr><td>High</td><td>2,000 appts</td><td>5 min</td><td>80%</td><td>133.3 h</td><td>$4,665*</td></tr>
+                  <tr><td>Low</td><td>400 appts</td><td>26.7 h</td><td>$935</td></tr>
+                  <tr><td>Mid</td><td>1,000 appts</td><td>66.7 h</td><td>$2,335</td></tr>
+                  <tr><td>High</td><td>2,000 appts</td><td>133.3 h</td><td>$4,665*</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="footnote">*Illustrative only; actual impact varies.</p>
-            <div class="cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            <p class="footnote">*Estimates assume $35/hr. Actual impact varies.</p>
+            <div class="cta"><a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote-apt">Get a quote</a></div>
           </aside>
         </div>
       </article>
@@ -325,15 +347,16 @@
       <!-- Lead Follow‑up -->
       <article id="leadfollow" class="agent-section is-lav" aria-labelledby="h-lead">
         <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-lead">AI Lead Follow‑up Agent</h3></header>
-        <p class="lead">Instantly replies to new leads, qualifies with a few questions, sends tailored follow‑ups, and books meetings.</p>
+        <p class="lead">Instantly replies to new leads, asks a few qualifying questions, sends tailored follow‑ups, and books meetings.</p>
         <div class="agent-layout">
           <div>
             <h4>Key capabilities</h4>
             <ul>
-              <li>Sequenced email/SMS with dynamic templates</li>
-              <li>Qualification scoring</li>
-              <li>Calendar booking</li>
-              <li>CRM logging</li>
+              <li>Replies to new leads instantly by email or text.</li>
+              <li>Asks a few simple questions to qualify the lead.</li>
+              <li>Sends tailored follow‑ups automatically.</li>
+              <li>Books calls or meetings.</li>
+              <li>Saves everything in your CRM.</li>
             </ul>
             <h4>Integrations</h4>
             <ul>
@@ -341,21 +364,28 @@
               <li>HubSpot, Pipedrive, Salesforce</li>
               <li>Calendly, Google/Microsoft calendars</li>
             </ul>
+            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
+            <ul>
+              <li>Speed to first reply.</li>
+              <li>Meetings booked from new leads.</li>
+              <li>Leads that become customers.</li>
+              <li>Follow‑ups sent on schedule.</li>
+            </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Lead Follow‑up Agent">
             <h4>Estimated savings</h4>
             <div class="table-responsive">
               <table>
-                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>AHT</th><th>Automation</th><th>Hours</th><th>Est. $*</th></tr></thead>
+                <thead><tr><th>Scenario</th><th>Volume/mo</th><th>Hours</th><th>Est. $*</th></tr></thead>
                 <tbody>
-                  <tr><td>Low</td><td>200 leads</td><td>10 min</td><td>70%</td><td>23.3 h</td><td>$815</td></tr>
-                  <tr><td>Mid</td><td>600 leads</td><td>10 min</td><td>70%</td><td>70 h</td><td>$2,450</td></tr>
-                  <tr><td>High</td><td>1,500 leads</td><td>10 min</td><td>70%</td><td>175 h</td><td>$6,125*</td></tr>
+                  <tr><td>Low</td><td>200 leads</td><td>23.3 h</td><td>$815</td></tr>
+                  <tr><td>Mid</td><td>600 leads</td><td>70 h</td><td>$2,450</td></tr>
+                  <tr><td>High</td><td>1,500 leads</td><td>175 h</td><td>$6,125*</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="footnote">*Illustrative only; actual impact varies.</p>
-            <div class="cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+            <p class="footnote">*Estimates assume $35/hr. Actual impact varies.</p>
+            <div class="cta"><a class="btn btn-primary" href="contact.html#quote" data-analytics="click:quote-lead">Get a quote</a></div>
           </aside>
         </div>
       </article>
