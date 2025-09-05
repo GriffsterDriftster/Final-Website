@@ -43,10 +43,13 @@
     .agent-section h3{font-family:"DM Serif Display",serif; font-size:clamp(1.6rem,3.5vw,2.1rem); margin:0}
     .agent-section .lead{color:var(--text-sub); margin:.25rem 0 1rem}
 
-    .agent-layout{display:grid; grid-template-columns:1.8fr 1fr; gap:2rem}
+    .agent-layout{display:grid; grid-template-columns:1.6fr 1.2fr; gap:1.5rem}
     @media (max-width: 900px){ .agent-layout{grid-template-columns:1fr} }
 
-    .features{border:1px solid var(--edge); background:var(--surface-alt); border-radius:1rem; padding:1rem}
+    /* widen savings column on large screens */
+    @media (min-width: 1200px){ .agent-layout{ grid-template-columns:1.4fr 1.3fr; } }
+
+    $11.25rem}
     .features h4{margin-top:0}
     .features ul{margin:.5rem 0 0 1rem}
 
