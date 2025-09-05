@@ -21,14 +21,14 @@
         <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="blog/index.html">Blog</a></li></ul>
         <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
       </nav>
-      <div class="cta-buttons"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+      <div class="cta-buttons"><a class="btn btn-primary" href="contact.html#contact-form">Get a quote</a></div>
     </div>
   </header>
   <main id="main" style="padding:4rem 0;">
     <div class="container">
       <h1 style="font-family:'DM Serif Display', serif; font-size:2rem; margin-bottom:1.5rem;">Let’s work together</h1>
       <p style="max-width:600px; color:var(--text-sub);">Tell us what success looks like and we’ll show you how our AI agents can deliver it. Use the form below to get in touch; we’ll respond promptly.</p>
-      <form action="https://formspree.io/f/myzdglpq" method="POST" style="margin-top:2rem; max-width:600px;">
+      <form id="contact-form" action="https://formspree.io/f/myzdglpq" method="POST" style="margin-top:2rem; max-width:600px;">
         <div style="display:flex; flex-direction:column; gap:1rem;">
           <label>Name<br><input type="text" name="name" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
           <label>Email<br><input type="email" name="email" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
@@ -39,12 +39,7 @@
           <button type="submit" class="btn btn-primary" data-analytics="contact-submit">Submit</button>
         </div>
       </form>
-      <div id="quote" style="margin-top:4rem;">
-        <h2 style="font-family:'DM Serif Display', serif; font-size:1.8rem;">Get a quote</h2>
-        <p style="max-width:600px; color:var(--text-sub);">Prefer to discuss your project with us directly? Use the booking link below to schedule a call.</p>
-        <a class="btn btn-primary" href="contact.html#quote">Get a quote</a>
       </div>
-    </div>
   </main>
   <footer class="site-footer">
     <div class="container">
