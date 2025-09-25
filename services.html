@@ -34,7 +34,7 @@
     /* Agent sections */
     .agents{padding:3rem 0 5rem}
     .agent-section{max-width:1100px; margin:1.25rem auto; padding:1.75rem; border:1px solid var(--edge); background:var(--surface); border-radius:1.25rem; box-shadow:0 10px 40px rgba(15,23,42,.06); scroll-margin-top:96px}
-    .agent-header{display:flex; align-items:center; gap:1rem; margin-bottom:.75rem}
+    .agent-header{display:flex; align-items:center; gap:1rem; margin-bottom:.4rem}
     .agent-badge{height:36px; width:36px; border-radius:10px; background:var(--p-blue); box-shadow:inset 0 0 0 2px rgba(255,255,255,.6)}
     .agent-section.is-mint .agent-badge{background:var(--p-mint)}
     .agent-section.is-lav .agent-badge{background:var(--p-lav)}
@@ -42,6 +42,7 @@
     .agent-section.is-sand .agent-badge{background:var(--p-sand)}
     .agent-section h3{font-family:"DM Serif Display",serif; font-size:clamp(1.6rem,3.5vw,2.1rem); margin:0}
     .agent-section .lead{color:var(--text-sub); margin:.25rem 0 1rem}
+    .badge{display:inline-block; margin-left:.5rem; font-size:.8rem; padding:.15rem .5rem; border-radius:.5rem; background:color-mix(in srgb, var(--p-blue), #fff 82%); border:1px solid var(--edge)}
 
     .agent-layout{display:grid; grid-template-columns:1.6fr 1.2fr; gap:1.5rem}
     @media (max-width: 900px){ .agent-layout{grid-template-columns:1fr} }
@@ -49,7 +50,6 @@
     /* widen savings column on large screens */
     @media (min-width: 1200px){ .agent-layout{ grid-template-columns:1.4fr 1.3fr; } }
 
-    $11.25rem}
     .features h4{margin-top:0}
     .features ul{margin:.5rem 0 0 1rem}
 
@@ -127,8 +127,8 @@
             <ul>
               <li>Answers questions using your website and files.</li>
               <li>Collects name, email, and phone so you can follow up.</li>
-              <li>Looks up orders or bookings when connected.</li>
-              <li>Sends tricky chats to a human on your team.</li>
+              <li><em>(Roadmap)</em> Looks up orders or bookings when connected.</li>
+              <li>Sends complex chats to a human on your team.</li>
               <li>Works day and night without breaks.</li>
             </ul>
             <h4>Integrations</h4>
@@ -136,13 +136,6 @@
               <li>Site widget</li>
               <li>Zendesk, HubSpot, Pipedrive</li>
               <li>Google Drive, Notion, Confluence</li>
-            </ul>
-            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
-            <ul>
-              <li>Questions solved without a human.</li>
-              <li>People who left their contact details.</li>
-              <li>Customer satisfaction rating (thumbs‑up %).</li>
-              <li>Times the chat needed a human.</li>
             </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Chat Bot">
@@ -183,13 +176,6 @@
               <li>Calendly, Google & Microsoft calendars</li>
               <li>CRM systems</li>
             </ul>
-            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
-            <ul>
-              <li>Calls handled without a human.</li>
-              <li>After‑hours calls saved.</li>
-              <li>Average wait time cut.</li>
-              <li>Appointments booked by phone.</li>
-            </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Phone Bot">
             <h4>Estimated savings</h4>
@@ -209,9 +195,9 @@
         </div>
       </article>
 
-      <!-- Review Bot -->
+      <!-- Review Bot (Coming soon) -->
       <article id="reviewbot" class="agent-section is-lav" aria-labelledby="h-reviewbot">
-        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-reviewbot">AI Review Bot</h3></header>
+        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-reviewbot">AI Review Bot <span class="badge">Coming soon</span></h3></header>
         <p class="lead">Monitors Google, Yelp, Facebook, and Trustpilot; drafts on‑brand replies; flags sensitive cases.</p>
         <div class="agent-layout">
           <div>
@@ -228,13 +214,6 @@
               <li>Gmail/Outlook</li>
               <li>Google Business Profiles, Yelp, Facebook Pages</li>
               <li>Slack notifications</li>
-            </ul>
-            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
-            <ul>
-              <li>Reviews replied to.</li>
-              <li>Average response time.</li>
-              <li>% of replies approved as‑is.</li>
-              <li>Issues escalated to a human.</li>
             </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Review Bot">
@@ -255,9 +234,9 @@
         </div>
       </article>
 
-      <!-- Invoice Agent -->
+      <!-- Invoice Agent (Coming soon) -->
       <article id="invoiceagent" class="agent-section is-peach" aria-labelledby="h-invoice">
-        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-invoice">AI Invoice Agent</h3></header>
+        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-invoice">AI Invoice Agent <span class="badge">Coming soon</span></h3></header>
         <p class="lead">Reads invoices from email/PDF, checks totals, matches POs, posts to accounting, and sends reminders.</p>
         <div class="agent-layout">
           <div>
@@ -274,13 +253,6 @@
               <li>Email inbox, Google Drive/SharePoint</li>
               <li>QuickBooks/Xero/SAP (or via Zapier/n8n)</li>
               <li>Slack notifications</li>
-            </ul>
-            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
-            <ul>
-              <li>Invoices processed each week.</li>
-              <li>Errors caught before payment.</li>
-              <li>Average approval time.</li>
-              <li>On‑time payments.</li>
             </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Invoice Agent">
@@ -301,9 +273,9 @@
         </div>
       </article>
 
-      <!-- Appointment Maker -->
+      <!-- Appointment Maker (Coming soon) -->
       <article id="appointmentmaker" class="agent-section is-sand" aria-labelledby="h-apt">
-        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-apt">AI Appointment Maker</h3></header>
+        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-apt">AI Appointment Maker <span class="badge">Coming soon</span></h3></header>
         <p class="lead">Schedules, reschedules, and reminds clients by chat, web, SMS, or phone to keep calendars full and no‑shows down.</p>
         <div class="agent-layout">
           <div>
@@ -320,13 +292,6 @@
               <li>Google/Microsoft calendars, Calendly</li>
               <li>SMS/WhatsApp</li>
               <li>CRM</li>
-            </ul>
-            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
-            <ul>
-              <li>Appointments booked.</li>
-              <li>No‑show rate reduced.</li>
-              <li>Time to confirm an appointment.</li>
-              <li>Cancellations recovered (rebooked).</li>
             </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Appointment Maker">
@@ -347,9 +312,9 @@
         </div>
       </article>
 
-      <!-- Lead Follow‑up -->
+      <!-- Lead Follow‑up (Coming soon) -->
       <article id="leadfollow" class="agent-section is-lav" aria-labelledby="h-lead">
-        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-lead">AI Lead Follow‑up Agent</h3></header>
+        <header class="agent-header"><div class="agent-badge" aria-hidden="true"></div><h3 id="h-lead">AI Lead Follow‑up Agent <span class="badge">Coming soon</span></h3></header>
         <p class="lead">Instantly replies to new leads, asks a few qualifying questions, sends tailored follow‑ups, and books meetings.</p>
         <div class="agent-layout">
           <div>
@@ -366,13 +331,6 @@
               <li>Web forms, email/SMS</li>
               <li>HubSpot, Pipedrive, Salesforce</li>
               <li>Calendly, Google/Microsoft calendars</li>
-            </ul>
-            <h4>KPIs <small style="font-weight:400;color:var(--text-sub)">(simple numbers we track)</small></h4>
-            <ul>
-              <li>Speed to first reply.</li>
-              <li>Meetings booked from new leads.</li>
-              <li>Leads that become customers.</li>
-              <li>Follow‑ups sent on schedule.</li>
             </ul>
           </div>
           <aside class="features" aria-label="Estimated savings for Lead Follow‑up Agent">
