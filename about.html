@@ -1,76 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/AboutPage">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us | Onbrd Solutions</title>
-  <meta name="description" content="Learn about Onbrd Solutions' mission, process, and the team behind our AI automation services.">
-  <link rel="canonical" href="https://onbrdsolutions.com/about.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/main.css">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Onbrd Solutions builds calm, capable AI agents that handle the busywork — answering, scheduling, and following up — so your team can focus on customers and growth." />
+  <link rel="canonical" href="https://onbrdsolutions.com/about.html" />
+
+  <!-- Open Graph / Twitter for richer sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Onbrd Solutions" />
+  <meta property="og:description" content="We design practical AI agents that plug into your tools and take work off your plate." />
+  <meta property="og:url" content="https://onbrdsolutions.com/about.html" />
+  <meta property="og:image" content="https://onbrdsolutions.com/assets/img/og-about.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/main.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Structured data (Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Onbrd Solutions",
+    "url": "https://onbrdsolutions.com/",
+    "logo": "https://onbrdsolutions.com/favicon.svg",
+    "sameAs": [
+      "https://www.linkedin.com/",
+      "https://x.com/"
+    ]
+  }
+  </script>
+
+  <style>
+    /* Page-local polish to match brand tokens in main.css */
+    :root{ --edge: rgba(15,23,42,.08); }
+    .page-hero{padding:6rem 0 2.25rem; background:radial-gradient(1200px 60% at 0% 0%, var(--p-peach) 0%, #fff 70%); position:relative; overflow:hidden}
+    .page-hero::after{content:""; position:absolute; inset:-10% -20% auto -20%; height:18rem; background:linear-gradient(90deg,var(--p-lav),var(--p-mint)); filter:blur(60px); opacity:.22}
+    .page-hero .container{max-width:1100px; margin:0 auto; padding:0 24px}
+    .page-hero h1{font-family:"DM Serif Display",serif; font-size:clamp(2.2rem,6vw,3.6rem); line-height:1.05; letter-spacing:-.01em}
+    .page-hero p.lead{color:var(--text-sub); max-width:68ch; margin-top:.75rem}
+
+    .section{padding:3.25rem 0}
+    .container{max-width:1100px; margin:0 auto; padding:0 24px}
+
+    .grid{display:grid; gap:1.5rem}
+    .grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+    .card{background:var(--surface); border:1px solid var(--edge); border-radius:1rem; padding:1.25rem; box-shadow:0 8px 28px rgba(15,23,42,.06)}
+    .stack{display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center}
+    .tag{display:inline-block; padding:.5rem 1rem; background:var(--surface); border:1px solid var(--edge); border-radius:.75rem; box-shadow:0 4px 10px rgba(15,23,42,.05)}
+    .tag a{color:inherit; text-decoration:none}
+    .tag a:hover{text-decoration:underline}
+
+    .cta-row{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
+  </style>
 </head>
 <body>
-  <!-- skip link removed -->
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Onbrd Solutions</a>
       <nav class="main-nav" aria-label="Main menu">
-        <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="blog/index.html">Blog</a></li></ul>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
         <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
       </nav>
-      <div class="cta-buttons"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="contact.html#quote">Book a free 15‑min call</a>
+      </div>
     </div>
   </header>
+
   <main id="main">
-    <section class="about-intro" style="padding:4rem 0;background:var(--p-peach);">
+    <!-- Intro / Mission -->
+    <section class="page-hero" aria-label="About Onbrd Solutions">
       <div class="container">
-        <h1 style="font-family:'DM Serif Display', serif; font-size:2.5rem;">Our mission & approach</h1>
-        <p style="max-width:700px; color:var(--text-sub); font-size:1.1rem;">Onbrd Solutions was founded to help businesses automate the busywork that slows them down. Our calm, capable AI agents let your team focus on what matters most: serving customers and growing your business. We believe AI should be accessible, transparent, and designed with people in mind.</p>
+        <h1>Our mission & approach</h1>
+        <p class="lead">Onbrd Solutions exists to take the busywork off your plate. We design calm, capable AI agents that answer, schedule, follow up, and reconcile — so your team can focus on customers and growth. We keep things practical, transparent, and human‑centered.</p>
       </div>
     </section>
-    <section class="process" style="padding:4rem 0; background:var(--surface);">
+
+    <!-- Process (remove KPI wording) -->
+    <section class="section" aria-label="Our process">
       <div class="container">
-        <h2 style="font-family:'DM Serif Display', serif; font-size:2rem; text-align:center;">Our process</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2rem; margin-top:2rem;">
-          <div><h3 style="font-family:'DM Serif Display', serif;">Discovery</h3><p>We learn your workflows, systems, and success metrics to identify quick wins and longer‑term opportunities.</p></div>
-          <div><h3 style="font-family:'DM Serif Display', serif;">Paid Pilot</h3><p>A low‑commitment engagement where we deploy one agent in 2–4 weeks and prove value against agreed KPIs.</p></div>
-          <div><h3 style="font-family:'DM Serif Display', serif;">Build</h3><p>We configure the rest of your agents, integrate with your systems, and set up governance and analytics.</p></div>
-          <div><h3 style="font-family:'DM Serif Display', serif;">Iterate</h3><p>Ongoing support to refine prompts, workflows, and models based on feedback and evolving needs.</p></div>
+        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center; margin-bottom:1rem;">Our process</h2>
+        <div class="grid cols-4">
+          <div class="card">
+            <h3 style="font-family:'DM Serif Display',serif; margin-top:0;">Discovery</h3>
+            <p>We map your workflows, systems, and success criteria to spot quick wins and build the plan.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-family:'DM Serif Display',serif; margin-top:0;">Paid pilot</h3>
+            <p>A low‑commitment engagement where we deploy one agent fast and prove value against agreed goals.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-family:'DM Serif Display',serif; margin-top:0;">Build</h3>
+            <p>We configure agents, connect your tools, and add governance and observability so it scales.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-family:'DM Serif Display',serif; margin-top:0;">Iterate</h3>
+            <p>Ongoing tuning — prompts, workflows, and integrations — guided by your feedback and data.</p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="tooling" style="padding:4rem 0; background:var(--p-mint);">
+
+    <!-- Stack (link the tools) -->
+    <section class="section" aria-label="Our stack" style="background:var(--p-mint);">
       <div class="container">
-        <h2 style="font-family:'DM Serif Display', serif; font-size:2rem; text-align:center;">Our stack</h2>
-        <p style="max-width:700px; margin:0 auto; text-align:center; color:var(--text-sub);">We build on trusted platforms like Zapier, n8n, leading language models, and major CRMs to orchestrate your operations. Our modular architecture means we can plug into the tools you already use.</p>
-        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; margin-top:2rem;">
-          <span style="padding:0.5rem 1rem; background:var(--surface); border-radius:0.75rem; box-shadow:0 4px 8px rgba(15,23,42,0.05);">Zapier</span>
-          <span style="padding:0.5rem 1rem; background:var(--surface); border-radius:0.75rem; box-shadow:0 4px 8px rgba(15,23,42,0.05);">n8n</span>
-          <span style="padding:0.5rem 1rem; background:var(--surface); border-radius:0.75rem; box-shadow:0 4px 8px rgba(15,23,42,0.05);">OpenAI</span>
-          <span style="padding:0.5rem 1rem; background:var(--surface); border-radius:0.75rem; box-shadow:0 4px 8px rgba(15,23,42,0.05);">HubSpot</span>
-          <span style="padding:0.5rem 1rem; background:var(--surface); border-radius:0.75rem; box-shadow:0 4px 8px rgba(15,23,42,0.05);">Salesforce</span>
+        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center;">Our stack</h2>
+        <p style="max-width:700px; margin:0 auto; text-align:center; color:var(--text-sub);">We build on trusted platforms to orchestrate your operations. Our modular approach means we plug into what you already use.</p>
+        <div class="stack" style="margin-top:1.5rem;">
+          <span class="tag"><a href="https://zapier.com" target="_blank" rel="noopener">Zapier</a></span>
+          <span class="tag"><a href="https://n8n.io" target="_blank" rel="noopener">n8n</a></span>
+          <span class="tag"><a href="https://openai.com" target="_blank" rel="noopener">OpenAI</a></span>
+          <span class="tag"><a href="https://www.hubspot.com" target="_blank" rel="noopener">HubSpot</a></span>
+          <span class="tag"><a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a></span>
+          <span class="tag"><a href="https://www.twilio.com" target="_blank" rel="noopener">Twilio</a></span>
         </div>
       </div>
     </section>
-    <section class="testimonial" style="padding:4rem 0; background:var(--p-lav);">
-      <div class="container" style="max-width:800px;">
-        <h2 style="font-family:'DM Serif Display', serif; font-size:2rem; text-align:center;">What our clients say</h2>
-        <blockquote style="background:var(--surface); padding:2rem; border-radius:1rem; box-shadow:0 6px 18px rgba(15,23,42,0.06); margin-top:2rem;">
-          <p style="font-style:italic; color:var(--text-sub);">“Our support backlog vanished after deploying Onbrd’s Chat Bot. We now respond instantly and have happier customers. The paid pilot proved ROI in just two weeks.”</p>
-          <footer style="margin-top:1rem; font-weight:600;">— Happy Customer, Operations Manager</footer>
-        </blockquote>
+
+    <!-- Credibility / Values instead of a fake testimonial -->
+    <section class="section" aria-label="What we value" style="background:var(--surface);">
+      <div class="container">
+        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center;">What we value</h2>
+        <div class="grid cols-4" style="margin-top:1.5rem;">
+          <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Clarity</h3><p>Plain language, clear scopes, and outcomes you can measure.</p></div>
+          <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Speed</h3><p>Small pilots that go live quickly, then expand based on results.</p></div>
+          <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Control</h3><p>Human approvals, audit trails, and simple off‑switches where it matters.</p></div>
+          <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Privacy‑first</h3><p>Least‑privilege access and redaction to protect sensitive data.</p></div>
+        </div>
+        <div class="cta-row" style="justify-content:center; margin-top:1.5rem;">
+          <a class="btn btn-primary" href="contact.html#quote">Book a free 15‑min call</a>
+          <a class="btn btn-ghost" href="services.html">See our agents</a>
+        </div>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="container">
-      <nav aria-label="Footer menu"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <nav aria-label="Footer menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
       <small>© 2025 Onbrd Solutions. All rights reserved.</small>
     </div>
   </footer>
+
   <script src="assets/main.js" defer></script>
 </body>
 </html>
