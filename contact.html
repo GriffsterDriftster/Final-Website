@@ -1,49 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/AboutPage">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact & Quote | Onbrd Solutions</title>
-  <meta name="description" content="Get in touch with Onbrd Solutions to request a quote or schedule a live demonstration of our AI automation services.">
-  <link rel="canonical" href="https://onbrdsolutions.com/contact.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/main.css">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us | Onbrd Solutions</title>
+  <meta name="description" content="Onbrd Solutions builds calm, capable AI agents that handle the busywork — answering, scheduling, and following up — so your team can focus on customers and growth." />
+  <link rel="canonical" href="https://onbrdsolutions.com/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Onbrd Solutions" />
+  <meta property="og:description" content="We design practical AI agents that plug into your tools and take work off your plate." />
+  <meta property="og:url" content="https://onbrdsolutions.com/about.html" />
+  <meta property="og:image" content="https://onbrdsolutions.com/assets/img/og-about.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/main.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Onbrd Solutions","url":"https://onbrdsolutions.com/","logo":"https://onbrdsolutions.com/favicon.svg","sameAs":["https://www.linkedin.com/","https://x.com/"]}
+  </script>
+  <style>
+    :root{ --edge: rgba(15,23,42,.08); }
+    .page-hero{padding:6rem 0 2.25rem; background:radial-gradient(1200px 60% at 0% 0%, var(--p-peach) 0%, #fff 70%); position:relative; overflow:hidden}
+    .page-hero::after{content:""; position:absolute; inset:-10% -20% auto -20%; height:18rem; background:linear-gradient(90deg,var(--p-lav),var(--p-mint)); filter:blur(60px); opacity:.22}
+    .page-hero .container{max-width:1100px; margin:0 auto; padding:0 24px}
+    .page-hero h1{font-family:"DM Serif Display",serif; font-size:clamp(2.2rem,6vw,3.6rem); line-height:1.05; letter-spacing:-.01em}
+    .page-hero p.lead{color:var(--text-sub); max-width:68ch; margin-top:.75rem}
+    .section{padding:3.25rem 0}
+    .container{max-width:1100px; margin:0 auto; padding:0 24px}
+    .grid{display:grid; gap:1.5rem}
+    .grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:var(--surface); border:1px solid var(--edge); border-radius:1rem; padding:1.25rem; box-shadow:0 8px 28px rgba(15,23,42,.06)}
+    .stack{display:flex; flex-wrap:wrap; gap:.75rem; justify-content:center}
+    .tag{display:inline-block; padding:.5rem 1rem; background:var(--surface); border:1px solid var(--edge); border-radius:.75rem; box-shadow:0 4px 10px rgba(15,23,42,.05)}
+    .tag a{color:inherit; text-decoration:none}
+    .cta-row{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
+    .btn.btn-primary{background:var(--p-mint); color:#0b3b32}
+  </style>
 </head>
 <body>
-  <!-- skip link removed -->
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Onbrd Solutions</a>
       <nav class="main-nav" aria-label="Main menu">
-        <ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="blog/index.html">Blog</a></li></ul>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
         <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
       </nav>
-      <div class="cta-buttons"><a class="btn btn-primary" href="contact.html#contact-form">Get a quote</a></div>
+      <div class="cta-buttons">
+        <a class="btn btn-primary" href="contact.html#quote">Get a Quote</a>
+      </div>
     </div>
   </header>
-  <main id="main" style="padding:4rem 0;">
-    <div class="container">
-      <h1 style="font-family:'DM Serif Display', serif; font-size:2rem; margin-bottom:1.5rem;">Let’s work together</h1>
-      <p style="max-width:600px; color:var(--text-sub);">Tell us what success looks like and we’ll show you how our AI agents can deliver it. Use the form below to get in touch; we’ll respond promptly.</p>
-      <form id="contact-form" action="https://formspree.io/f/myzdglpq" method="POST" style="margin-top:2rem; max-width:600px;">
-        <div style="display:flex; flex-direction:column; gap:1rem;">
-          <label>Name<br><input type="text" name="name" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
-          <label>Email<br><input type="email" name="email" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
-          <label>Company<br><input type="text" name="company" style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
-          <label>Website<br><input type="url" name="website" style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></label>
-          <label>What are you hoping to automate?<br><textarea name="message" rows="5" required style="width:100%; padding:0.75rem; border:1px solid var(--surface-alt); border-radius:0.5rem;"></textarea></label>
-          <label style="display:flex; align-items:center; gap:0.5rem;"><input type="checkbox" name="consent" required><span>I consent to being contacted regarding this inquiry.</span></label>
-          <button type="submit" class="btn btn-primary" data-analytics="contact-submit">Submit</button>
-        </div>
-      </form>
+
+  <main id="main">
+    <section class="page-hero" aria-label="About Onbrd Solutions">
+      <div class="container">
+        <h1>Our Mission & Approach</h1>
+        <p class="lead">Onbrd Solutions exists to take the busywork off your plate. We design calm, capable AI agents that answer, schedule, follow up, and reconcile — so your team can focus on customers and growth. We keep things practical, transparent, and human‑centered.</p>
       </div>
+    </section>
+
+    <section class="section" aria-label="Our Process">
+      <div class="container">
+        <h2 style="font-family:'DM Serif Display',serif; text-align:center;">Our Process</h2>
+        <div class="grid cols-4">
+          <div class="card"><h3>Discovery</h3><p>We map your workflows, systems, and success criteria to spot quick wins and build the plan.</p></div>
+          <div class="card"><h3>Paid Pilot</h3><p>A low‑commitment engagement where we deploy one agent fast and prove value against agreed goals.</p></div>
+          <div class="card"><h3>Build</h3><p>We configure agents, connect your tools, and add governance and observability so it scales.</p></div>
+          <div class="card"><h3>Iterate</h3><p>Ongoing tuning — prompts, workflows, and integrations — guided by your feedback and data.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Our Stack" style="background:var(--p-mint);">
+      <div class="container">
+        <h2 style="font-family:'DM Serif Display',serif; text-align:center;">Our Stack</h2>
+        <div class="stack" style="margin-top:1.5rem;">
+          <span class="tag"><a href="https://n8n.io" target="_blank">n8n</a></span>
+          <span class="tag"><a href="https://www.twilio.com" target="_blank">Twilio</a></span>
+          <span class="tag"><a href="https://www.vapi.ai" target="_blank">Vapi</a></span>
+          <span class="tag"><a href="https://openai.com" target="_blank">OpenAI</a></span>
+          <span class="tag"><a href="https://cloud.google.com" target="_blank">Google Cloud</a></span>
+          <span class="tag"><a href="https://qdrant.tech" target="_blank">Qdrant</a></span>
+          <span class="tag"><a href="https://www.postgresql.org" target="_blank">Postgres</a></span>
+          <span class="tag"><a href="https://zapier.com" target="_blank">Zapier</a></span>
+          <span class="tag"><a href="https://cal.com" target="_blank">Cal.com</a></span>
+          <span class="tag"><a href="https://www.hubspot.com" target="_blank">HubSpot</a></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Client Story">
+      <div class="container">
+        <h2 style="font-family:'DM Serif Display',serif; text-align:center;">Beach Sherps</h2>
+        <div class="card" style="max-width:860px; margin:1rem auto;">
+          <p>“Onbrd set up our AI phone and chat agents so we don’t miss bookings during peak beach hours. Customers get answers fast, and we get clean, organized requests in our inbox.”</p>
+          <div style="display:flex; align-items:center; gap:.75rem; color:var(--text-sub);">
+            <img src="assets/img/beach-sherps-logo.svg" alt="Beach Sherps" width="28" height="28" loading="lazy" />
+            <span>Owner, Beach Sherps</span>
+          </div>
+        </div>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="contact.html#quote">Get a Quote</a>
+          <a class="btn btn-ghost" href="services.html">See Our Agents</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="What We Value" style="background:var(--surface);">
+      <div class="container">
+        <h2 style="font-family:'DM Serif Display',serif; text-align:center;">What We Value</h2>
+        <div class="grid cols-4" style="margin-top:1.5rem;">
+          <div class="card"><h3>Clarity</h3><p>Plain language, clear scopes, and outcomes you can measure.</p></div>
+          <div class="card"><h3>Speed</h3><p>Small pilots that go live quickly, then expand based on results.</p></div>
+          <div class="card"><h3>Control</h3><p>Human approvals, audit trails, and simple off‑switches where it matters.</p></div>
+          <div class="card"><h3>Privacy‑First</h3><p>Least‑privilege access and redaction to protect sensitive data.</p></div>
+        </div>
+        <div class="cta-row" style="justify-content:center; margin-top:1.5rem;">
+          <a class="btn btn-primary" href="contact.html#quote">Get a Quote</a>
+          <a class="btn btn-ghost" href="services.html">See Our Agents</a>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container">
-      <nav aria-label="Footer menu"><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+      <nav aria-label="Footer menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a aria-current="page" href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
       <small>© 2025 Onbrd Solutions. All rights reserved.</small>
     </div>
   </footer>
