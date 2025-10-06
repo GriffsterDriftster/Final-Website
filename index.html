@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Let AI handle the busywork | Onbrd Solutions</title>
+  <title>Let AI Handle the Busywork | Onbrd Solutions</title>
   <meta name="description" content="Deploy a calm, capable AI team that answers, schedules, and follows through across chat, phone, and email.">
   <link rel="canonical" href="https://onbrdsolutions.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,16 +35,24 @@
   </script>
   <style>
     /* -----------------------------
-       Glassmorphism Plans Redesign
-       + copy updates per notes
+       Glassmorphism + Copy Updates
        ----------------------------- */
     :root{
       --bg:#F9FBFF; --surface:#FFFFFF; --surface-alt:#F2F6FF;
       --text:#0F172A; --text-sub:#475569;
-      --primary:#1E8AF7; --primary-pressed:#1667D8; --primary-soft:#EAF3FF;
+      --primary:#27C3A8;            /* updated to mint for CTA color correction */
+      --primary-pressed:#1aa78f;    /* darker mint on hover */
+      --primary-soft:#E9FBF7;
       --mint:#27C3A8; --mint-soft:#E9FBF7;
-      --lav:#8C79F8;
+      --lav:#8C79F8; --peach:#FFB59C; --gray:#E2E8F0;
     }
+
+    body{background:var(--bg); color:var(--text);} 
+
+    /* Pop banner */
+    .announce{background:var(--primary-soft); border-bottom:1px solid var(--gray);}
+    .announce .container{max-width:min(1200px,95vw); margin:0 auto; padding:.65rem 1rem; display:flex; gap:.75rem; align-items:center; justify-content:center; font-weight:600;}
+    .announce .tag{padding:.15rem .5rem; border-radius:.5rem; background:var(--mint); color:#fff; font-size:.8rem;}
 
     .tiers { 
       padding: clamp(5rem, 8vw, 9rem) 0; 
@@ -62,108 +70,42 @@
     .tiers .container { max-width: min(1400px, 95vw); margin: 0 auto; padding-inline: clamp(1rem, 3vw, 2rem); }
     .tiers .container > h2 { margin-bottom: clamp(1.5rem, 3vw, 3rem); line-height: 1.15; letter-spacing: -0.01em; }
 
-    .plan-grid { 
-      display: grid; 
-      grid-template-columns: 1fr; /* one plan per row */
-      gap: clamp(1.75rem, 3vw, 3rem); 
-      align-items: stretch; 
-      margin-top: clamp(.5rem, 2vw, 1.5rem);
-    }
+    /* Buttons */
+    .btn.btn-primary { display:inline-block; padding:.75rem 1.1rem; border-radius:.75rem; text-decoration:none; background:var(--primary); color:#fff; font-weight:600; transition:.15s ease-in-out; }
+    .btn.btn-primary:hover{ background:var(--primary-pressed); transform:translateY(-1px); }
 
-    .plan-card { 
-      position: relative; 
-      border-radius: 22px; 
-      padding: clamp(1.25rem, 2.2vw, 2rem); 
-      display: flex; flex-direction: column; gap: .875rem; min-height: 100%;
-      background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.35));
-      border: 1px solid rgba(255,255,255,.45);
-      box-shadow: 0 10px 40px rgba(2,6,23,.12), inset 0 1px 0 rgba(255,255,255,.35);
-      backdrop-filter: blur(16px) saturate(130%);
-      -webkit-backdrop-filter: blur(16px) saturate(130%);
-      isolation: isolate;
-    }
-    .plan-card::before { /* soft color accents */
-      content:""; position:absolute; inset:0; border-radius:22px; z-index:0; pointer-events:none;
-      background: 
-        radial-gradient(120% 80% at -10% -10%, rgba(140,121,248,.18), rgba(140,121,248,0) 35%),
-        radial-gradient(100% 60% at 110% 10%, rgba(30,138,247,.18), rgba(30,138,247,0) 40%);
-    }
-    .plan-card > * { position: relative; z-index: 1; }
+    /* Agents */
+    .agent-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.25rem;}
+    .agent-card{padding:1.25rem; border:1px solid rgba(2,6,23,.06); border-radius:16px; background:#fff; box-shadow:0 4px 18px rgba(2,6,23,.05);} 
+    .agent-muted{opacity:.85}
 
-    .plan-card h3 { margin: 0 0 .45rem; font-size: clamp(1.1rem, 1.3vw, 1.3rem); }
-    .plan-meta { color: var(--text-sub); line-height: 1.65; }
+    /* Coming Soon badge as its own line */
+    .badge-soon{display:inline-block; margin-top:.35rem; font-size:.8rem; font-weight:700; letter-spacing:.02em; background:var(--primary-soft); color:#065f46; padding:.2rem .5rem; border-radius:.5rem;}
 
-    .plan-bullets { margin: .75rem 0 1.25rem 1.25rem; display: grid; gap: .75rem; }
-    .plan-bullets li { line-height: 1.65; }
+    /* Pricing placeholder */
+    .pricing-hold{display:grid; gap:1rem; grid-template-columns:1fr;}
+    .pricing-card{background:#fff; border:1px solid rgba(2,6,23,.06); border-radius:18px; padding:1.5rem; box-shadow:0 8px 30px rgba(2,6,23,.08);} 
 
-    .plan-cta { margin-top: auto; padding-top: .25rem; }
+    /* Footnote */
+    .footnote{margin-top:1rem; color:var(--text-sub);} 
 
-    .section-alt { background: transparent; }
+    /* Minor typography helpers */
+    h1, h2, h3{ text-transform:none; }
+    .hero h1{ font-variant-ligatures:normal; }
 
-    .tiers .container > p:last-of-type { margin-top: clamp(1.25rem, 2.2vw, 1.75rem); color: var(--text-sub); }
-
-    .btn.btn-primary { display:inline-block; padding:.75rem 1.1rem; border-radius:.75rem; text-decoration:none; background:var(--primary); color:#fff; font-weight:600; }
-
-    @media (min-width: 900px) {
-      .plan-card {
-        display: grid;
-        grid-template-columns: minmax(300px, 360px) 1fr; /* left meta column + right features */
-        column-gap: clamp(1.5rem, 3vw, 2.5rem);
-        row-gap: .75rem;
-        align-items: start;
-        padding: clamp(1.5rem, 2.2vw, 2.25rem);
-      }
-      .plan-card h3,
-      .plan-card .plan-meta,
-      .plan-card .plan-cta { grid-column: 1; }
-      .plan-card .plan-bullets { grid-column: 2; margin: 0; }
-      .plan-card .plan-cta { align-self: end; justify-self: start; }
-    }
-
-    .plan-rows{ display:flex; flex-direction:column; gap:clamp(1.25rem,2.5vw,2rem); }
-
-    .plan-row{
-      position:relative; isolation:isolate;
-      display:grid; grid-template-columns: minmax(280px, 360px) 1fr; align-items:start;
-      gap: clamp(1rem, 2.5vw, 2rem);
-      padding: clamp(1.25rem, 2.2vw, 2rem);
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.58), rgba(255,255,255,.38));
-      border: 1px solid rgba(255,255,255,.5);
-      box-shadow: 0 10px 40px rgba(2,6,23,.10), inset 0 1px 0 rgba(255,255,255,.35);
-      backdrop-filter: blur(16px) saturate(130%);
-      -webkit-backdrop-filter: blur(16px) saturate(130%);
-    }
-    .plan-row::before{ content:""; position:absolute; inset:0; border-radius:22px; pointer-events:none; z-index:0;
-      background:
-        radial-gradient(120% 80% at -10% -10%, rgba(140,121,248,.18), rgba(140,121,248,0) 35%),
-        radial-gradient(100% 60% at 110% 10%, rgba(30,138,247,.18), rgba(30,138,247,0) 40%);
-    }
-    .plan-info, .plan-list{ position:relative; z-index:1; }
-
-    .plan-info h3{ margin:0 0 .4rem; font-size: clamp(1.1rem, 1.3vw, 1.3rem); }
-    .plan-meta{ color:var(--text-sub); line-height:1.65; margin-bottom:.5rem; }
-    .plan-cta{ margin-top:auto; }
-
-    .plan-list{ list-style:disc; margin:0; padding-left:1.1rem; display:grid; gap:.65rem 1.25rem; }
-    .plan-list li{ position:relative; line-height:1.65; }
-    @media (min-width: 1000px){
-      .plan-list{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
-    }
-
-    .plan-row{ border-left:6px solid transparent; }
-    .plan-row[data-accent="launch"]{ border-left-color: rgba(30,138,247,.5); }
-    .plan-row[data-accent="grow"]{ border-left-color: rgba(39,195,168,.55); }
-    .plan-row[data-accent="scale"]{ border-left-color: rgba(140,121,248,.55); }
-    .plan-row[data-accent="enterprise"]{ border-left-color: rgba(15,23,42,.35); }
-
-    @media (max-width: 899px){
-      .plan-row{ grid-template-columns: 1fr; }
-    }
+    /* Existing plan grid styles kept minimal (unused now) */
   </style>
 </head>
   <script src="//code.tidio.co/bctmvmev79saollmdegrrlxd6zbnodth.js" async></script>
 <body>
+  <!-- POP: Early joining fee waving banner -->
+  <div class="announce" role="status" aria-live="polite">
+    <div class="container">
+      <span class="tag">Early Access</span>
+      <span>Installation fees <strong>WAIVED</strong> for early joiners. Limited time.</span>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="container">
       <a href="index.html" class="logo">Onbrd Solutions</a>
@@ -179,7 +121,7 @@
         </button>
       </nav>
       <div class="cta-buttons">
-        <a class="btn btn-primary" href="contact.html#quote">Get a quote</a>
+        <a class="btn btn-primary" href="contact.html#quote">Get a Quote</a>
       </div>
     </div>
   </header>
@@ -187,11 +129,11 @@
   <main id="main">
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow">Never miss a client again</p>
-        <h1>Let AI handle the busywork</h1>
-        <p class="sub">Agents that answer, schedule, and follow through across chat, phone, and email.</p>
+        <p class="eyebrow">Never Miss a Client Again</p>
+        <h1>Let AI Handle the Busywork</h1>
+        <p class="sub">We design AI agents tailored to you that answer, schedule, and follow up — so your team can focus on what really matters.</p>
         <div class="cta">
-          <a class="btn btn-primary" href="contact.html#quote">Get a quote</a>
+          <a class="btn btn-primary" href="contact.html#quote">Get a Quote</a>
         </div>
       </div>
       <figure class="device-mock">
@@ -199,131 +141,71 @@
       </figure>
     </section>
 
-    <!-- Removed the 'Trusted by forward‑thinking businesses' band until we have real logos/testimonials -->
-
+    <!-- Agents -->
     <section class="agents">
       <div class="container">
-        <h2>Your AI team</h2>
+        <h2>Your AI Team</h2>
         <div class="agent-grid">
-          <!-- Keep it simple now -->
+          <!-- Keep it focused -->
           <div class="agent-card">
             <h3>AI Chat Bot</h3>
-            <p>Answers FAQs and captures leads 24/7 with on‑brand responses.</p>
+            <p>Answers FAQs and captures leads 24/7 with on‑brand responses. Forwards conversations to your inbox as needed.</p>
             <a class="btn btn-ghost" href="services.html#chatbot">Learn more</a>
           </div>
           <div class="agent-card">
-            <h3>AI Phone Bot</h3>
-            <p>Answers calls, captures details, and can book to your calendar.</p>
+            <h3>AI Phone Bot*</h3>
+            <p>Answers calls, captures details, and can book to your calendar. Provides availability to customers by chat, SMS, or phone.</p>
             <a class="btn btn-ghost" href="services.html#phonebot">Learn more</a>
           </div>
-          <!-- Keep others for later; mark as coming soon if you want to show roadmap -->
+
+          <!-- Coming Soon items show on a new line with colored tag -->
           <div class="agent-card agent-muted">
-            <h3>AI Review Bot <span class="badge">Coming soon</span></h3>
+            <h3>AI Review Bot</h3>
+            <span class="badge-soon">Coming Soon</span>
             <p>Monitors reviews and drafts on‑brand replies; escalates sensitive cases to a human.</p>
             <a class="btn btn-ghost" href="services.html#reviewbot">Learn more</a>
           </div>
           <div class="agent-card agent-muted">
-            <h3>AI Invoice Agent <span class="badge">Coming soon</span></h3>
-            <p>Extracts invoice details, checks totals, and prepares reminders for approval.</p>
+            <h3>AI Invoice Agents</h3>
+            <span class="badge-soon">Coming Soon</span>
+            <p>Extracts invoice details from emails, checks totals, and forwards reminders for approval.</p>
             <a class="btn btn-ghost" href="services.html#invoiceagent">Learn more</a>
           </div>
           <div class="agent-card agent-muted">
-            <h3>AI Appointment Maker <span class="badge">Coming soon</span></h3>
-            <p>Schedules across calendars and sends confirmations and reminders to cut no‑shows.</p>
+            <h3>AI Appointment Maker</h3>
+            <span class="badge-soon">Coming Soon</span>
+            <p>Schedules across calendar and forwards confirmations and reminders to cut no‑shows. Provides availability to customers by chat, SMS, or phone.</p>
             <a class="btn btn-ghost" href="services.html#appointmentmaker">Learn more</a>
           </div>
-          <div class="agent-card agent-muted">
-            <h3>AI Lead Follow‑up Agent <span class="badge">Coming soon</span></h3>
-            <p>Instantly replies to new leads, qualifies them, and follows up via email/SMS to book appointments.</p>
-            <a class="btn btn-ghost" href="services.html#leadfollow">Learn more</a>
-          </div>
+          <!-- Lead Follow-up Agent removed per request -->
         </div>
+        <p class="footnote">* Phone usage is billed per‑minute via Twilio/Vapi.</p>
       </div>
     </section>
 
-    <!-- Removed the 'See your workflows in action' (dashboard) section per notes -->
-
-    <!-- Plans — updated copy/timelines/support -->
+    <!-- Pricing placeholder ("Pricing Coming Soon") and no timeline claims -->
     <section class="tiers section-alt" id="plans">
       <div class="container">
-        <h2>Choose your plan. We set it up end‑to‑end.</h2>
+        <h2>Choose Your Plan. We Set It Up End‑to‑End.</h2>
 
-        <div class="plan-rows">
-          <!-- Launch -->
-          <article class="plan-row" data-accent="launch">
-            <div class="plan-info">
-              <h3>Launch</h3>
-              <p class="plan-meta">Start with one AI teammate that answers and books.</p>
-              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-            </div>
-            <ul class="plan-list">
-              <li><strong>AI teammates:</strong> 1 (chat <em>or</em> phone)</li>
-              <li><strong>Channels:</strong> Web chat, Phone*, Email, SMS</li><li><strong>Reports:</strong> Monthly individualized report</li>
-              <li><strong>Support:</strong> Same‑day email response</li>
-              <li><strong>Go‑live:</strong> <strong>3–7 days</strong></li>
-              <li><strong>Calendar booking:</strong> Add‑on</li>
-            </ul>
-          </article>
-
-          <!-- Grow -->
-          <article class="plan-row" data-accent="grow">
-            <div class="plan-info">
-              <h3>Growth</h3>
-              <p class="plan-meta">Two AI teammates across more channels—plus tuning.</p>
-              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-            </div>
-            <ul class="plan-list">
-              <li><strong>AI teammates:</strong> 2 (chat + phone)</li>
-              <li><strong>Channels:</strong> Web chat, Phone*, Email, SMS</li><li><strong>Reports:</strong> Bi‑weekly individualized report</li>
-              <li><strong>Support:</strong> Priority support</li>
-              <li><strong>Go‑live:</strong> <strong>3–5 days</strong></li>
-              <li><strong>Calendar booking:</strong> Included</li>
-            </ul>
-          </article>
-
-          <!-- Scale -->
-          <article class="plan-row" data-accent="scale">
-            <div class="plan-info">
-              <h3>Pro</h3>
-              <p class="plan-meta">A small team of agents with routing and QA.</p>
-              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-            </div>
-            <ul class="plan-list">
-              <li><strong>AI teammates:</strong> 3–4</li>
-              <li><strong>Channels:</strong> Web chat, Phone*, Email, SMS</li><li><strong>Reports:</strong> Weekly individualized report</li>
-              <li><strong>Support:</strong> Priority support</li>
-              <li><strong>Go‑live:</strong> <strong>2–4 days</strong></li>
-              <li><strong>Calendar booking:</strong> Included</li>
-            </ul>
-          </article>
-
-          <!-- Enterprise (kept generic) -->
-          <article class="plan-row" data-accent="enterprise">
-            <div class="plan-info">
-              <h3>Enterprise</h3>
-              <p class="plan-meta">Custom, with data residency and advanced controls.</p>
-              <div class="plan-cta"><a class="btn btn-primary" href="contact.html#quote">Get a quote</a></div>
-            </div>
-            <ul class="plan-list">
-              <li><strong>AI teammates:</strong> Custom</li>
-              <li><strong>Channels:</strong> Custom</li>
-              <li><strong>Sources:</strong> Custom</li><li><strong>Reports:</strong> Custom SLAs</li>
-              <li><strong>Support:</strong> Custom</li>
-              <li><strong>Go‑live:</strong> Consult</li>
-            </ul>
-          </article>
+        <div class="pricing-hold">
+          <div class="pricing-card">
+            <h3>Pricing Coming Soon</h3>
+            <p>We’re finalizing simple, usage‑aware pricing. Get a quote today and we’ll honor early‑access perks.</p>
+            <a class="btn btn-primary" href="contact.html#quote">Get a Quote</a>
+          </div>
         </div>
 
-        <p class="footnote">Early‑partner perk: <strong>setup fees are waived</strong> and everyone gets <strong>priority support for the first 30 days</strong>. Calendar booking is included in Growth/Pro and available as an add‑on in Launch.</p>
+        <p class="footnote">Early‑partner perk: <strong>setup fees are waived</strong> and everyone gets <strong>priority support for the first 30 days</strong>.</p>
       </div>
     </section>
 
     <section class="faq">
       <div class="container">
-        <h2>Frequently asked questions</h2>
+        <h2>Frequently Asked Questions</h2>
         <details class="faq-item"><summary>What is an AI agent?</summary><div>Pre‑built agents that combine language models, workflows, and integrations to handle tasks like answering questions, booking meetings, and following up with leads.</div></details>
-        <details class="faq-item"><summary>How long does it take to get started?</summary><div>Most projects go live in <strong>3–7 days</strong> for Launch, <strong>3–5 days</strong> for Growth, and <strong>2–4 days</strong> for Pro—depending on scope and integrations.</div></details>
-        <details class="faq-item"><summary>Do I need technical expertise?</summary><div>No coding required. We implement end‑to‑end and show you how to iterate safely.</div></details>
+        <!-- Removed timeline specifics per request -->
+        <details class="faq-item"><summary>Do I need technical expertise?</summary><div>No coding required — we handle everything end‑to‑end and are here to answer any questions.</div></details>
         <details class="faq-item"><summary>Can I try before committing?</summary><div>We don’t do free trials, but you can cancel anytime. We’re happy to walk you through a live demo.</div></details>
       </div>
     </section>
