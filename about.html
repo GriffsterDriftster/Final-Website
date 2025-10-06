@@ -58,6 +58,10 @@
     .tag a:hover{text-decoration:underline}
 
     .cta-row{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
+
+    /* CTA consistency with mint primary from index */
+    .btn.btn-primary{background:var(--p-mint); color:#0b3b32}
+    .btn.btn-primary:hover{filter:saturate(1.05) brightness(.98)}
   </style>
 </head>
 <body>
@@ -74,7 +78,7 @@
         <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
       </nav>
       <div class="cta-buttons">
-        <a class="btn btn-primary" href="contact.html#quote">Book a free 15‑min call</a>
+        <a class="btn btn-primary" href="contact.html#quote">Book a Free 15‑Min Call</a>
       </div>
     </div>
   </header>
@@ -83,22 +87,22 @@
     <!-- Intro / Mission -->
     <section class="page-hero" aria-label="About Onbrd Solutions">
       <div class="container">
-        <h1>Our mission & approach</h1>
+        <h1>Our Mission & Approach</h1>
         <p class="lead">Onbrd Solutions exists to take the busywork off your plate. We design calm, capable AI agents that answer, schedule, follow up, and reconcile — so your team can focus on customers and growth. We keep things practical, transparent, and human‑centered.</p>
       </div>
     </section>
 
-    <!-- Process (remove KPI wording) -->
-    <section class="section" aria-label="Our process">
+    <!-- Process (title case) -->
+    <section class="section" aria-label="Our Process">
       <div class="container">
-        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center; margin-bottom:1rem;">Our process</h2>
+        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center; margin-bottom:1rem;">Our Process</h2>
         <div class="grid cols-4">
           <div class="card">
             <h3 style="font-family:'DM Serif Display',serif; margin-top:0;">Discovery</h3>
             <p>We map your workflows, systems, and success criteria to spot quick wins and build the plan.</p>
           </div>
           <div class="card">
-            <h3 style="font-family:'DM Serif Display',serif; margin-top:0;">Paid pilot</h3>
+            <h3 style="font-family:'DM Serif Display',serif; margin-top:0;">Paid Pilot</h3>
             <p>A low‑commitment engagement where we deploy one agent fast and prove value against agreed goals.</p>
           </div>
           <div class="card">
@@ -113,35 +117,57 @@
       </div>
     </section>
 
-    <!-- Stack (link the tools) -->
-    <section class="section" aria-label="Our stack" style="background:var(--p-mint);">
+    <!-- Stack (expanded links) -->
+    <section class="section" aria-label="Our Stack" style="background:var(--p-mint);">
       <div class="container">
-        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center;">Our stack</h2>
+        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center;">Our Stack</h2>
         <p style="max-width:700px; margin:0 auto; text-align:center; color:var(--text-sub);">We build on trusted platforms to orchestrate your operations. Our modular approach means we plug into what you already use.</p>
         <div class="stack" style="margin-top:1.5rem;">
-          <span class="tag"><a href="https://zapier.com" target="_blank" rel="noopener">Zapier</a></span>
           <span class="tag"><a href="https://n8n.io" target="_blank" rel="noopener">n8n</a></span>
-          <span class="tag"><a href="https://openai.com" target="_blank" rel="noopener">OpenAI</a></span>
-          <span class="tag"><a href="https://www.hubspot.com" target="_blank" rel="noopener">HubSpot</a></span>
-          <span class="tag"><a href="https://www.salesforce.com" target="_blank" rel="noopener">Salesforce</a></span>
           <span class="tag"><a href="https://www.twilio.com" target="_blank" rel="noopener">Twilio</a></span>
+          <span class="tag"><a href="https://www.vapi.ai" target="_blank" rel="noopener">Vapi</a></span>
+          <span class="tag"><a href="https://openai.com" target="_blank" rel="noopener">OpenAI</a></span>
+          <span class="tag"><a href="https://cloud.google.com" target="_blank" rel="noopener">Google Cloud</a></span>
+          <span class="tag"><a href="https://qdrant.tech" target="_blank" rel="noopener">Qdrant</a></span>
+          <span class="tag"><a href="https://www.postgresql.org" target="_blank" rel="noopener">Postgres</a></span>
+          <span class="tag"><a href="https://zapier.com" target="_blank" rel="noopener">Zapier</a></span>
+          <span class="tag"><a href="https://cal.com" target="_blank" rel="noopener">Cal.com</a></span>
+          <span class="tag"><a href="https://www.hubspot.com" target="_blank" rel="noopener">HubSpot</a></span>
         </div>
       </div>
     </section>
 
-    <!-- Credibility / Values instead of a fake testimonial -->
-    <section class="section" aria-label="What we value" style="background:var(--surface);">
+    <!-- Testimonial: Beach Sherps -->
+    <section class="section" aria-label="Client Story">
       <div class="container">
-        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center;">What we value</h2>
+        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center;">Beach Sherps</h2>
+        <div class="card" style="max-width:860px; margin:1rem auto;">
+          <p style="font-size:1.05rem; line-height:1.7; margin:.25rem 0 .75rem;">“Onbrd set up our AI phone and chat agents so we don’t miss bookings during peak beach hours. Customers get answers fast, and we get clean, organized requests in our inbox.”</p>
+          <div style="display:flex; align-items:center; gap:.75rem; color:var(--text-sub);">
+            <img src="assets/img/beach-sherps-logo.svg" alt="Beach Sherps" width="28" height="28" loading="lazy" />
+            <span>Owner, Beach Sherps</span>
+          </div>
+        </div>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-primary" href="contact.html#quote">Get a Quote</a>
+          <a class="btn btn-ghost" href="services.html">See Our Agents</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values + CTA -->
+    <section class="section" aria-label="What We Value" style="background:var(--surface);">
+      <div class="container">
+        <h2 style="font-family:'DM Serif Display',serif; font-size:2rem; text-align:center;">What We Value</h2>
         <div class="grid cols-4" style="margin-top:1.5rem;">
           <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Clarity</h3><p>Plain language, clear scopes, and outcomes you can measure.</p></div>
           <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Speed</h3><p>Small pilots that go live quickly, then expand based on results.</p></div>
           <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Control</h3><p>Human approvals, audit trails, and simple off‑switches where it matters.</p></div>
-          <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Privacy‑first</h3><p>Least‑privilege access and redaction to protect sensitive data.</p></div>
+          <div class="card"><h3 style="margin-top:0; font-family:'DM Serif Display',serif;">Privacy‑First</h3><p>Least‑privilege access and redaction to protect sensitive data.</p></div>
         </div>
         <div class="cta-row" style="justify-content:center; margin-top:1.5rem;">
-          <a class="btn btn-primary" href="contact.html#quote">Book a free 15‑min call</a>
-          <a class="btn btn-ghost" href="services.html">See our agents</a>
+          <a class="btn btn-primary" href="contact.html#quote">Book a Free 15‑Min Call</a>
+          <a class="btn btn-ghost" href="services.html">See Our Agents</a>
         </div>
       </div>
     </section>
