@@ -54,10 +54,13 @@
     .testimonial { max-width:860px; margin:1.5rem auto 0; padding:2rem; text-align:center; }
     .testimonial .quote { font-size:1.1rem; line-height:1.7; margin:0 0 1.25rem; }
     .testimonial .sig { display:flex; align-items:center; justify-content:center; gap:.9rem; margin-top:1rem; color:var(--text-sub); }
-    .testimonial .sig__avatar { width:40px; height:40px; border-radius:999px; display:block; }
+    .testimonial .sig__avatar { width:40px; height:40px; display:block; object-fit:contain; }
     .testimonial .sig__text { display:flex; flex-direction:column; line-height:1.25; }
     .testimonial .sig__name { font-weight:600; }
     .testimonial .sig__title { opacity:.85; font-size:.95rem; }
+
+    /* Prominent client logo above quote */
+    .client-logo { width:min(220px, 50%); height:auto; display:block; margin:0 auto 1rem; filter: drop-shadow(0 6px 16px rgba(15,23,42,.10)); }
 
     /* Alt section surfaces */
     .section.mint { background: var(--p-mint); }
@@ -138,9 +141,15 @@
       <div class="container">
         <h2 style="font-family:'DM Serif Display',serif; text-align:center;">Beach Sherps</h2>
         <div class="card testimonial" role="figure" aria-label="Testimonial from Beach Sherps owner">
+          <!-- Prominent logo -->
+          <a href="https://beachsherps.com" target="_blank" rel="noopener" aria-label="Visit Beach Sherps website">
+            <img class="client-logo" src="assets/images/beachsherps-logo.png" alt="Beach Sherps logo" loading="lazy" width="400" height="120" />
+          </a>
+
           <p class="quote">“Onbrd set up our AI phone and chat agents so we don’t miss bookings during peak beach hours. Customers get answers fast, and we get clean, organized requests in our inbox.”</p>
+
           <figcaption class="sig">
-            <img class="sig__avatar" src="assets/img/beach-sherps-logo.svg" alt="Beach Sherps logo" width="40" height="40" loading="lazy" />
+            <img class="sig__avatar" src="assets/images/beachsherps-logo.png" alt="Beach Sherps logo" width="40" height="40" loading="lazy" />
             <span class="sig__text">
               <span class="sig__name">Mack Linstead</span>
               <span class="sig__title">Owner, Beach Sherps</span>
