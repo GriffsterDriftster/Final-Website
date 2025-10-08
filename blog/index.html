@@ -1,88 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Blog | Onbrd Solutions</title>
-<meta name="description" content="Read the latest insights on AI automation, operations playbooks, buyer’s guides, and case walkthroughs.">
-<link rel="canonical" href="https://onbrdsolutions.com/blog/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/main.css">
-<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="description" content="Read the latest insights on AI automation, operations playbooks, buyer’s guides, and case walkthroughs." />
+<link rel="canonical" href="https://onbrdsolutions.com/blog/" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/main.css" />
+<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+
+<style>
+  /* Page-scoped styles to match site aesthetic */
+  .early-access-banner { background: var(--p-mint, #27C3A8); color:#0b3b32; text-align:center; font-weight:600; padding:.75rem 1rem; font-size:.95rem; letter-spacing:.02em; }
+  .btn.btn-primary { background: var(--p-mint); color:#0b3b32; }
+  .blog-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+  .post-card { background:var(--surface); border-radius:1rem; box-shadow:0 6px 20px rgba(15,23,42,.06); overflow:hidden; transition:transform .2s ease; }
+  .post-card:hover { transform: translateY(-2px); }
+</style>
 </head>
 <body>
-<header class="site-header">
-<div class="container">
-<a href="../index.html" class="logo">Onbrd Solutions</a>
-<nav class="main-nav" aria-label="Main menu">
-<ul>
-<li><a href="../index.html">Home</a></li>
-<li><a href="../services.html">Services</a></li>
-<li><a href="../about.html">About</a></li>
-<li><a aria-current="page" href="index.html">Blog</a></li>
-</ul>
-<button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-</nav>
-<div class="cta-buttons"><a class="btn btn-primary" href="../contact.html#quote">Get a Quote</a></div>
-</div>
-</header>
+  <!-- Early access banner to match other pages -->
+  <div class="early-access-banner">Installation Fees WAIVED for Early Joiners — Limited Time!</div>
 
+  <header class="site-header">
+    <div class="container">
+      <a href="../index.html" class="logo">Onbrd Solutions</a>
+      <nav class="main-nav" aria-label="Main menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a aria-current="page" href="index.html">Blog</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+      </nav>
+      <div class="cta-buttons"><a class="btn btn-primary" href="../contact.html#quote">Get a Quote</a></div>
+    </div>
+  </header>
 
-<main id="main" style="padding:4rem 0;">
-<div class="container">
-<h1 style="font-family:'DM Serif Display', serif; font-size:2.5rem; margin-bottom:1.5rem;">Insights & Guides</h1>
-<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem;">
-<!-- 1 -->
-<article style="background:var(--surface); border-radius:1rem; box-shadow:0 6px 20px rgba(15,23,42,0.06); overflow:hidden;">
-<a href="5-ways-ai-agents-stop-missed-calls.html">
-<img src="../assets/img/blog-header.png" alt="Phone AI agent answering calls" style="width:100%; height:auto;" loading="lazy" decoding="async">
-<div style="padding:1.5rem;">
-<h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">5 Ways AI Agents Stop Missed Calls</h2>
-<p style="color:var(--text-sub);">Practical plays to answer instantly, route smartly, and capture every lead.</p>
-<p style="font-size:0.8rem; color:var(--text-sub);">4 min read</p>
-</div>
-</a>
-</article>
-<!-- 2 -->
-<article style="background:var(--surface); border-radius:1rem; box-shadow:0 6px 20px rgba(15,23,42,0.06); overflow:hidden;">
-<a href="ai-phone-bots-vs-chatbots.html">
-<img src="../assets/img/blog-header.png" alt="Chatbot vs phone bot" style="width:100%; height:auto;" loading="lazy" decoding="async">
-<div style="padding:1.5rem;">
-<h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">AI Phone Bots vs. Chatbots — Which Do You Need?</h2>
-<p style="color:var(--text-sub);">A quick buyer’s guide to choose the right channel for your leads.</p>
-<p style="font-size:0.8rem; color:var(--text-sub);">5 min read</p>
-</div>
-</a>
-</article>
-<!-- 3 -->
-<article style="background:var(--surface); border-radius:1rem; box-shadow:0 6px 20px rgba(15,23,42,0.06); overflow:hidden;">
-<a href="from-manual-to-magical-ai-scheduling.html">
-<img src="../assets/img/blog-header.png" alt="AI scheduling appointments" style="width:100%; height:auto;" loading="lazy" decoding="async">
-<div style="padding:1.5rem;">
-<h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">From Manual to Magical: How AI Handles Your Scheduling</h2>
-<p style="color:var(--text-sub);">Intent detection, availability checks, confirmations, and rescheduling—done for you.</p>
-<p style="font-size:0.8rem; color:var(--text-sub);">5 min read</p>
-</div>
-</a>
-</article>
-<!-- 4 -->
-<article style="background:var(--surface); border-radius:1rem; box-shadow:0 6px 20px rgba(15,23,42,0.06); overflow:hidden;">
-<a href="why-every-small-business-needs-an-ai-receptionist.html">
-<img src="../assets/img/blog-header.png" alt="AI receptionist concept" style="width:100%; height:auto;" loading="lazy" decoding="async">
-<div style="padding:1.5rem;">
-<h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">Why Every Small Business Needs an AI Receptionist</h2>
-<p style="color:var(--text-sub);">Answer first ring, book faster, and keep your team focused.</p>
-<p style="font-size:0.8rem; color:var(--text-sub);">4 min read</p>
-</div>
-</a>
-</article>
-<!-- 5 -->
-<article style="background:var(--surface); border-radius:1rem; box-shadow:0 6px 20px rgba(15,23,42,0.06); overflow:hidden;">
-<a href="hidden-costs-of-manual-follow-up.html">
-<img src="../assets/img/blog-header.png" alt="Lead follow-up automation" style="width:100%; height:auto;" loading="lazy" decoding="async">
-<div style="padding:1.5rem;">
-<h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">The Hidden Costs of Manual Follow‑Up (and How AI Fixes It)</h2>
-<p style="color:var(--text-sub);">Instant replies, human tone, and analytics that lift conversions.</p>
+  <main id="main" style="padding:4rem 0;">
+    <div class="container">
+      <h1 style="font-family:'DM Serif Display', serif; font-size:2.5rem; margin-bottom:1.5rem;">Insights &amp; Guides</h1>
+
+      <div class="blog-grid">
+        <!-- 1 -->
+        <article class="post-card">
+          <a href="5-ways-ai-agents-stop-missed-calls.html">
+            <img src="../assets/img/blog-header.png" alt="Phone AI agent answering calls" style="width:100%; height:auto;" loading="lazy" decoding="async" />
+            <div style="padding:1.5rem;">
+              <h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">5 Ways AI Agents Stop Missed Calls</h2>
+              <p style="color:var(--text-sub);">Practical plays to answer instantly, route smartly, and capture every lead.</p>
+              <p style="font-size:.8rem; color:var(--text-sub);">4 min read</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- 2 -->
+        <article class="post-card">
+          <a href="ai-phone-bots-vs-chatbots.html">
+            <img src="../assets/img/blog-header.png" alt="Chatbot vs phone bot" style="width:100%; height:auto;" loading="lazy" decoding="async" />
+            <div style="padding:1.5rem;">
+              <h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">AI Phone Bots vs. Chatbots — Which Do You Need?</h2>
+              <p style="color:var(--text-sub);">A quick buyer’s guide to choose the right channel for your leads.</p>
+              <p style="font-size:.8rem; color:var(--text-sub);">5 min read</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- 3 -->
+        <article class="post-card">
+          <a href="from-manual-to-magical-ai-scheduling.html">
+            <img src="../assets/img/blog-header.png" alt="AI scheduling appointments" style="width:100%; height:auto;" loading="lazy" decoding="async" />
+            <div style="padding:1.5rem;">
+              <h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">From Manual to Magical: How AI Handles Your Scheduling</h2>
+              <p style="color:var(--text-sub);">Intent detection, availability checks, confirmations, and rescheduling—done for you.</p>
+              <p style="font-size:.8rem; color:var(--text-sub);">5 min read</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- 4 -->
+        <article class="post-card">
+          <a href="why-every-small-business-needs-an-ai-receptionist.html">
+            <img src="../assets/img/blog-header.png" alt="AI receptionist concept" style="width:100%; height:auto;" loading="lazy" decoding="async" />
+            <div style="padding:1.5rem;">
+              <h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">Why Every Small Business Needs an AI Receptionist</h2>
+              <p style="color:var(--text-sub);">Answer first ring, book faster, and keep your team focused.</p>
+              <p style="font-size:.8rem; color:var(--text-sub);">4 min read</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- 5 -->
+        <article class="post-card">
+          <a href="hidden-costs-of-manual-follow-up.html">
+            <img src="../assets/img/blog-header.png" alt="Lead follow-up automation" style="width:100%; height:auto;" loading="lazy" decoding="async" />
+            <div style="padding:1.5rem;">
+              <h2 style="font-family:'DM Serif Display', serif; font-size:1.5rem; margin-top:0;">The Hidden Costs of Manual Follow‑Up (and How AI Fixes It)</h2>
+              <p style="color:var(--text-sub);">Instant replies, human tone, and analytics that lift conversions.</p>
+              <p style="font-size:.8rem; color:var(--text-sub);">5 min read</p>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- Inline CTA under grid for consistency -->
+      <div class="cta" style="display:flex; gap:.75rem; flex-wrap:wrap; margin-top:2rem;">
+        <a class="btn btn-primary" href="../contact.html#quote">Get a Quote</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <nav aria-label="Footer menu">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a aria-current="page" href="index.html">Blog</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <small>© 2025 Onbrd Solutions. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js" defer></script>
+</body>
 </html>
